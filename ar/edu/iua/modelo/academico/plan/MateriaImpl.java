@@ -18,7 +18,7 @@ public class MateriaImpl extends Materia {
         return anio;
     }
 
-    void setAnio(AnioPlan anio) {
+    public void setAnio(AnioPlan anio) {
         this.anio = anio;
     }
 

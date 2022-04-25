@@ -7,11 +7,11 @@ public interface CrearPlan {
     /*
         Este metodo requiere que se guarde en la base de datos un plan
         Se debe validar y retornar false si:
-            - plan no puede ser null
-            - No se permite recibir un plan sin estado
-            - No se permite un plan con año null, excepto si el estado es BORRADOR
-            - No se permite un plan con año < 1990 y > 2040
-            - No se permite un listado de años null o vacio, excepto si el estado del plan es BORRADOR
+            //- plan no puede ser null 
+            //- No se permite recibir un plan sin estado
+            //- No se permite un plan con año null, excepto si el estado es BORRADOR
+            //- No se permite un plan con año < 1990 y > 2040
+            //- No se permite un listado de años null o vacio, excepto si el estado del plan es BORRADOR
             - No se permite un año con el att plan != del plan que se recibe [ej. plan.getAnios().get(0).getPlan().equals(plan) == false, es error ]
             - No se permite un año con el att numero <= 0, recordar que si el estado del plan es BORRADOR, este att puede ser null, pero nunca <= 0
             - Los numeros de los años en el listado de años debe ser secuancial, comenzando en 1
@@ -26,6 +26,6 @@ public interface CrearPlan {
             - No se permite que una materia no tenga carga horaria, excepto si el estado del plan es BORRADOR 
             - No se permite que una materias tenga carga horaria < 0, recordar que si el estado del plan es BORRADOR, este att puede ser null, pero nunca <= 0 
     */
-    boolean crear(Plan plan);    
-    
+
+    boolean crear(Plan plan); 
 }
