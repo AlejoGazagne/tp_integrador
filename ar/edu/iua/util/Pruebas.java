@@ -2,20 +2,18 @@ package ar.edu.iua.util;
 
 import java.util.List;
 
-import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
 import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 
 public class Pruebas {
 
     public void probar() {
-
-        List<Plan> planes = GenerarEjemplosDePlanes.generar(25, true);        
+        
+        List<Plan> planes = GenerarEjemplosDePlanes.generar(4, true);        
 
         System.out.println("\n\nSe crearon " + planes.size() + " planes.");
 
 
-        CrearPlanes crearPlanes = new CrearPlanesImpl();
+        /*CrearPlanes crearPlanes = new CrearPlanesImpl();
         
 
         boolean ok = crearPlanes.crear(planes);
@@ -45,8 +43,8 @@ public class Pruebas {
         
 
         
-        por favor complete con mas codigo de pruebas, trate de probar todas las clases de negocio, borrar, modificar, buscar    
-
+        //por favor complete con mas codigo de pruebas, trate de probar todas las clases de negocio, borrar, modificar, buscar    
+        */
     }
 
 }

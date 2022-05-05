@@ -317,8 +317,12 @@ public class GenerarEjemplosDePlanes {
     }
 
     private static void generarYAgregarPlanesAleatoriamente(int cantidadAGenerar, List<Plan> planes){
-        // todos los planes q se generen deben agregarse al parametro planes
-        // ... por favor complete el codigo faltante
+        UtilRandom generacionDePlanes = new UtilRandom();
+        for (int i = 0; i<cantidadAGenerar; i++){
+            System.out.println("cantidad a generar" + cantidadAGenerar);
+            planes.add(generacionDePlanes.crearPlanAleatorio(planes));
+        }
+        
     } 
 
 
