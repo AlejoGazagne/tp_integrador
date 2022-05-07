@@ -26,10 +26,11 @@ public class UtilRandom {
         for(int jj = 0; jj < listaPlanes.size(); jj++){
             if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
                 planAleatorio.setAnio(random.nextInt(26) + 1996);
-                jj = 0;
+                jj = -1;
             }
-        }// UNA VEZ DE MUCHAS ME DEVUELVE UN ANIO REPETIDO(esto no es escalable ni en pedo... REVISAR)
-
+        }
+        if(planAleatorio.getAnio() > 2018) planAleatorio.setEstadoBorrador();
+        else if(planAleatorio.getAnio() < 2018) planAleatorio.setEstadoNoActivo();
         
         // EN ESTE ANIO QUEREMOS SETTEAR LOS NOMBRES DE LOS ANIOSPLAN
         int cantAnios = random.nextInt(2)+5;
@@ -41,14 +42,14 @@ public class UtilRandom {
             int aux = random.nextInt(4)+8;
             for(int hh = 0; hh < aux; hh++){
                 Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + hh), 
-                materiaGenerador[random.nextInt(materiaGenerador.length)],Math.ceil(random.nextDouble(2.0)+1));
+                materiaGenerador[random.nextInt(materiaGenerador.length)], Math.ceil(random.nextDouble(2.0)+1));
                 if(hh == 0){
                     materiaList.add(materia);
                 }else{
                     for (int kk = 0; kk < materiaList.size(); kk++){
                         if(materia.getNombre().equals(materiaList.get(kk).getNombre())){
                             materia.setNombre(materiaGenerador[random.nextInt(materiaGenerador.length)]);
-                            kk--;
+                            kk = -1;
                         }
                     }
                     materiaList.add(materia);
@@ -61,11 +62,7 @@ public class UtilRandom {
         }
         planAleatorio.setAnios(anioList);
 
+
         return planAleatorio;
-
     }
-
-        
-
 }
-
