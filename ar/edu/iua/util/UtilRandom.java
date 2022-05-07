@@ -16,43 +16,44 @@ public class UtilRandom {
     public Plan crearPlanAleatorio(List<Plan> listaPlanes){
         Random random = new Random(System.currentTimeMillis());
         Plan planAleatorio = new PlanImpl();
-        List<Materia> materiaList = new ArrayList<Materia>();
         List<AnioPlan> anioList = new ArrayList<AnioPlan>();
-        int aux = random.nextInt(4)+7;
-        String materiaGenerador[]={"Matematica","Historia","Biologia","Geografia","Robotica","Lengua","Informatica",
-                                    "Latin","Ingles","Quimica","Fisica","Educacion para la Salud","Educacion Fisica"};
+        String materiaGenerador[]={"Matematica","Historia","Biologia","Geografia","Robotica","Lengua","Informatica", 
+                                    "Latin","Ingles","Quimica","Fisica","Educacion para la Salud","Educacion Fisica",
+                                    "Musica","Plastica"};
 
-                                   
-
+        // PRIMERO SETTEAMOS UN ANIO ALEATORIO Y DESPUES EN EL FOR RECORREMOS TODA LA LISTA Y VERIFICAMOS QUE LOS VALORES SEAN DISTINTOS
+        planAleatorio.setAnio(random.nextInt(20) + 2000);
         for(int jj = 0; jj < listaPlanes.size(); jj++){
-             planAleatorio.setAnio(random.nextInt(20) + 2000);
-                if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
-                    planAleatorio.setAnio(random.nextInt(20) + 2000);
+            if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
+                planAleatorio.setAnio(random.nextInt(26) + 1996);
+                jj = 0;
             }
+        }// UNA VEZ DE MUCHAS ME DEVUELVE UN ANIO REPETIDO(esto no es escalable ni en pedo... REVISAR)
 
-        }
         
-
+        // EN ESTE ANIO QUEREMOS SETTEAR LOS NOMBRES DE LOS ANIOSPLAN
         int cantAnios = random.nextInt(2)+5;
-        for(int i=0; i<cantAnios; i++){
-            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, i, listaPlanes.get(1).getAnios().get(i).getNombre());
+        for(int ii = 0; ii < cantAnios; ii++){
+            List<Materia> materiaList = new ArrayList<Materia>();
+            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, ii, listaPlanes.get(1).getAnios().get(ii).getNombre());
 
-            
-            for(int hh = 0; hh < 5; hh++){
-                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt(""+ planAleatorio.getAnio() + anioAleatorio.getNumero() + hh), 
-                materiaGenerador[random.nextInt(materiaGenerador.length)],Math.ceil(random.nextDouble(2.0)+2));
+            // EN ESTE FOR QUEREMOS INGRESAR LAS MATERIAS AL PLAN
+            int aux = random.nextInt(4)+8;
+            for(int hh = 0; hh < aux; hh++){
+                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + hh), 
+                materiaGenerador[random.nextInt(materiaGenerador.length)],Math.ceil(random.nextDouble(2.0)+1));
                 if(hh == 0){
                     materiaList.add(materia);
-                }
-                for (int kk =0; kk < materiaList.size(); kk++){
-                    if(materia.getNombre().equals(materiaList.get(kk).getNombre())){
-                        materia.setNombre(materiaGenerador[random.nextInt(materiaGenerador.length)]);
-                        //kk--; 
-                        // MUCHAS MATERIAS GENERADAS Y KK-- rompe todo 
+                }else{
+                    for (int kk = 0; kk < materiaList.size(); kk++){
+                        if(materia.getNombre().equals(materiaList.get(kk).getNombre())){
+                            materia.setNombre(materiaGenerador[random.nextInt(materiaGenerador.length)]);
+                            kk--;
+                        }
                     }
-                }
-                materiaList.add(materia);
+                    materiaList.add(materia);
                 
+                }
                 
             }
             anioAleatorio.setMaterias(materiaList);

@@ -10,7 +10,6 @@ public class Main {
         Pruebas pruebas = new Pruebas();
         pruebas.probar();
 
-
         System.out.println("\n\nFin de main");
     }
 
