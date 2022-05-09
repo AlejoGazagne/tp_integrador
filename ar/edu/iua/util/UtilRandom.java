@@ -36,7 +36,7 @@ public class UtilRandom {
         int cantAnios = random.nextInt(2)+5;
         for(int ii = 0; ii < cantAnios; ii++){
             List<Materia> materiaList = new ArrayList<Materia>();
-            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, ii, listaPlanes.get(1).getAnios().get(ii).getNombre());
+            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, ii+1, listaPlanes.get(1).getAnios().get(ii).getNombre());
 
             // EN ESTE FOR QUEREMOS INGRESAR LAS MATERIAS AL PLAN
             int aux = random.nextInt(4)+8;
