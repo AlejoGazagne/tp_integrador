@@ -6,10 +6,13 @@ import ar.edu.iua.persistencia.BaseDeDatos;
 public class BorrarPlanImpl implements BorrarPlan{
     public boolean borrar(Plan plan){
         
-        if(plan == null) return false;
-        if(plan.isEstadoBorrador() == false) return false;
-        
-        BaseDeDatos.planes.remove(plan);
-        return true;
+        if(plan != null){
+            if(plan.isEstadoBorrador() != false){
+                BaseDeDatos.planes.remove(plan);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

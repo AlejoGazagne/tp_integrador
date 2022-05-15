@@ -14,6 +14,3 @@ public interface BuscarPlanes {
     List<Plan> buscar(String terminos);
     
 }
-// ingles
-// culturainglesa
-// Tenemoa que hacer fors que comparesn el orden de las letras y si la encuentran devolverla

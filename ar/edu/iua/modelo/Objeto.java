@@ -12,4 +12,6 @@ public abstract class Objeto implements Cloneable {
         return super.clone();
     }
 
+    abstract public String fullToString();
+
 }

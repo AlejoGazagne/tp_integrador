@@ -15,6 +15,9 @@ public class AnioPlanImpl extends AnioPlan {
         this.numero = numero;
         this.nombre = nombre;
     }
+    public AnioPlanImpl() {
+  
+    }
 
     public Plan getPlan() {
         return plan;
@@ -76,6 +79,18 @@ public class AnioPlanImpl extends AnioPlan {
 
     public String toString() {
         return nombre != null ? nombre : (numero != null ? "Año " + numero : "Año sin identificación");
+    }
+
+    public String fullToString() {
+
+        String z = (numero != null ? numero.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n";
+
+        for(Materia materia : materias){
+            String m = materia.fullToString().trim();
+            z += ( m.length() > 0 ) ? m + "\n" : "";
+        }
+                
+        return z.trim();
     }
 
 }

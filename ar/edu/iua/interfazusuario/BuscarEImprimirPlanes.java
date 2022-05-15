@@ -9,7 +9,7 @@ public interface BuscarEImprimirPlanes {
         //          PLAN        Años        Materias        ESTADO
         //          ----        ----        --------       -------- 
         //          2018          5            42          ACTIVO  
-        //          2013          7            2           BORRADOR  
+        //          2013          7            2           BORRADOR  mira como lo imprimen los chi8co 
 
     // ej tarjetas
         //      -------------------------------------

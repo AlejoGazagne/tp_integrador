@@ -9,6 +9,10 @@ public class PlanImpl extends Plan {
     private Estado estado;
     private List<AnioPlan> anios = new ArrayList<AnioPlan>();
 
+    public void set(Plan plan){
+        this.anio = plan.getAnio();
+    }
+
     private enum Estado {
         BORRADOR,
         ACTIVO,
@@ -82,6 +86,18 @@ public class PlanImpl extends Plan {
 
     public String toString() {
         return "Plan de estudios " + (anio != null ? anio.toString() : " desconocido");
+    }
+
+    public String fullToString(){
+
+        String s = (anio != null ? anio.toString() : "") + "\n" + (estado != null ? estado.toString() : "") + "\n";
+
+        for(AnioPlan anioList : anios){
+            String p = anioList.fullToString().trim();
+            s += (p.length() > 0) ? p + "\n" : "";
+        }
+
+        return s;
     }
 
 }

@@ -11,7 +11,6 @@ import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 
-
 public class UtilRandom {
     public Plan crearPlanAleatorio(List<Plan> listaPlanes){
         Random random = new Random(System.currentTimeMillis());
@@ -22,10 +21,10 @@ public class UtilRandom {
                                     "Musica","Plastica"};
 
         // PRIMERO SETTEAMOS UN ANIO ALEATORIO Y DESPUES EN EL FOR RECORREMOS TODA LA LISTA Y VERIFICAMOS QUE LOS VALORES SEAN DISTINTOS
-        planAleatorio.setAnio(random.nextInt(20) + 2000);
+        planAleatorio.setAnio(random.nextInt(30) + 1996);
         for(int jj = 0; jj < listaPlanes.size(); jj++){
             if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
-                planAleatorio.setAnio(random.nextInt(26) + 1996);
+                planAleatorio.setAnio(random.nextInt(30) + 1996);
                 jj = -1;
             }
         }
@@ -39,9 +38,9 @@ public class UtilRandom {
             AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, ii+1, listaPlanes.get(1).getAnios().get(ii).getNombre());
 
             // EN ESTE FOR QUEREMOS INGRESAR LAS MATERIAS AL PLAN
-            int aux = random.nextInt(4)+8;
-            for(int hh = 0; hh < aux; hh++){
-                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + hh), 
+            int aux = random.nextInt(4)+8; 
+            for(int hh = 0; hh < aux; hh++){ 
+                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + (hh + 1)), 
                 materiaGenerador[random.nextInt(materiaGenerador.length)], Math.ceil(random.nextDouble(2.0)+1));
                 if(hh == 0){
                     materiaList.add(materia);
@@ -53,15 +52,12 @@ public class UtilRandom {
                         }
                     }
                     materiaList.add(materia);
-                
                 }
-                
             }
             anioAleatorio.setMaterias(materiaList);
             anioList.add(anioAleatorio);
         }
         planAleatorio.setAnios(anioList);
-
 
         return planAleatorio;
     }

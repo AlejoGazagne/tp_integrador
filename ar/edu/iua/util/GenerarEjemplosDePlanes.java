@@ -7,7 +7,6 @@ import ar.edu.iua.modelo.academico.plan.*;
 
 public class GenerarEjemplosDePlanes {
 
-
     // Este metodo primero crea 2 planes, segun https://monserrat.unc.edu.ar/secundario/plan-de-estudios/#1523542585948-acc3dfd8-8da3
     // y tambien crea de forma aleatoria una determinada cantidad de planes
     public static List<Plan> generar(int cantidadAGenerar, boolean imprimirResultado) {
@@ -55,7 +54,7 @@ public class GenerarEjemplosDePlanes {
         Materia m10 = new MateriaImpl(primero2018, Integer.parseInt("" + 2018 + 1 + codigoMateria++), "Formación Ética y Ciudadana I", 3.0);
         Materia m11 = new MateriaImpl(primero2018, Integer.parseInt("" + 2018 + 1 + codigoMateria++), "Estrategias de Aprendizaje y Entornos Virtuales",
                 4.0);
-        Materia m12 = new MateriaImpl(primero2018, Integer.parseInt("" + 2018 + 1 + codigoMateria++), "Educación Física y Deportes I", 0.0);
+        Materia m12 = new MateriaImpl(primero2018, Integer.parseInt("" + 2018 + 1 + codigoMateria++), "Educación Física y Deportes I", 1.0);
 
         primero2018.getMaterias().add(m1);
         primero2018.getMaterias().add(m2);
@@ -87,7 +86,7 @@ public class GenerarEjemplosDePlanes {
         segundo2018.getMaterias().add(new MateriaImpl(segundo2018, Integer.parseInt("" + 2018 + 2 + codigoMateria++), "Educación Física y Deportes II", 3.0));
         segundo2018.getMaterias().add(new MateriaImpl(segundo2018, Integer.parseInt("" + 2018 + 2 + codigoMateria++), "Espacios Optativos 2019/2021", 3.0));
         segundo2018.getMaterias().add(new MateriaImpl(segundo2018, Integer.parseInt("" + 2018 + 2 + codigoMateria++), "Espacios Optativos 2022", 3.0));
-
+        segundo2018.getMaterias().add(new MateriaImpl(segundo2018, Integer.parseInt("" + 2018 + 2 + codigoMateria++), "Chino", 4.0));
         // MATEIAS DEL PLAN 2018 - TERCER AÑO
 
         codigoMateria = 1;
@@ -144,7 +143,7 @@ public class GenerarEjemplosDePlanes {
         quinto2018.getMaterias().add(new MateriaImpl(quinto2018, Integer.parseInt("" + 2018 + 5 + codigoMateria++), "Historia V", 4.0));
         quinto2018.getMaterias().add(new MateriaImpl(quinto2018, Integer.parseInt("" + 2018 + 5 + codigoMateria++), "Educacion Fisica y Escuadras", 3.0));
         quinto2018.getMaterias().add(new MateriaImpl(quinto2018, Integer.parseInt("" + 2018 + 5 + codigoMateria++), "Espacios Optativos 2022", 3.0));
-        quinto2018.getMaterias().add(new MateriaImpl(quinto2018, Integer.parseInt("" + 2018 + 5 + codigoMateria++), "Proyectos Sociocomunitarios", 0.0));
+        quinto2018.getMaterias().add(new MateriaImpl(quinto2018, Integer.parseInt("" + 2018 + 5 + codigoMateria++), "Proyectos Sociocomunitarios", 1.0));
 
         // PLAN 2001
 
@@ -245,7 +244,7 @@ public class GenerarEjemplosDePlanes {
 
         codigoMateria = 1;
 
-        quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Lengua y Literatura V", 4.0));
+        quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Lengua y Literatura V ARG", 4.0));
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Lengua y Cultura Latinas V", 2.0));
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Lengua y Cultura Griegas I", 4.0));
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Ingles V", 3.0));
@@ -260,6 +259,7 @@ public class GenerarEjemplosDePlanes {
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Metodologia De La Investigacion", 2.0));
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Folosofia I", 2.0));
         quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Educacion Fisica V", 2.0));
+        quinto2001.getMaterias().add(new MateriaImpl(quinto2001, Integer.parseInt("" + 2001 + 5 + codigoMateria++), "Arg", 2.0));
 
         // MATEIAS DEL PLAN 2001 - SEXTO AÑO
 
@@ -307,23 +307,19 @@ public class GenerarEjemplosDePlanes {
 
         // ==========================================================================
 
-        if (imprimirResultado) {
+        /*if (imprimirResultado) {
             imprimirPlanes(planes);
-        }
+        }*/
 
         return planes;
-
     }
 
     private static void generarYAgregarPlanesAleatoriamente(int cantidadAGenerar, List<Plan> planes){
         UtilRandom generacionDePlanes = new UtilRandom();
         for (int ii = 0; ii < cantidadAGenerar; ii++){
-            System.out.println("cantidad a generar" + cantidadAGenerar);
             planes.add(generacionDePlanes.crearPlanAleatorio(planes));
         }
-        
-    } 
-
+    }
 
     public static void imprimirPlanes(List<Plan> planes) {
         for (Plan plan : planes) {
@@ -340,8 +336,6 @@ public class GenerarEjemplosDePlanes {
             if (plan.getAnios().size() == 0) {
                 System.out.println("\tA este plan no se le cargaron años!!");
             }
-
         }
     }
-
 }

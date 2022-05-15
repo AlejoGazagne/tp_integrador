@@ -20,4 +20,5 @@ public abstract class Materia extends Objeto {
 
     abstract public void setCargaHoraria(Double cargaHoraria);
 
+    
 }
