@@ -28,6 +28,8 @@ public class UtilRandom {
                 jj = -1;
             }
         }
+
+        // A LOS ANIOS MENORES A 2018 SE LES SETTEA ESTADO NO ACTIVO Y A LOS MAYORES BORRADOR
         if(planAleatorio.getAnio() > 2018) planAleatorio.setEstadoBorrador();
         else if(planAleatorio.getAnio() < 2018) planAleatorio.setEstadoNoActivo();
         
