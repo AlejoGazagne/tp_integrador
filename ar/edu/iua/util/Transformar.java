@@ -1,7 +1,7 @@
 package ar.edu.iua.util;
 
 public class Transformar {
-    static public String TraducirCadena(String cadena){
+    static public String traducirCadena(String cadena){
 
         cadena = cadena.replace('ñ', 'n');
         cadena = cadena.replace('á','a');

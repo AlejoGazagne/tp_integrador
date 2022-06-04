@@ -12,6 +12,6 @@ public interface ModificarPlanes {
             - planes no puede ser null
             - Ver las mismas reglas de ModificarPlan.modificar(Plan plan)
     */
-    boolean modificar(List<Plan> planes);    
+    boolean modificar(List<Plan> planes) throws ModificarPlanEx;    
     
 }

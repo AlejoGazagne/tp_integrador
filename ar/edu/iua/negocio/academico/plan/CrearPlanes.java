@@ -12,6 +12,6 @@ public interface CrearPlanes {
             - planes no puede ser null
             - Ver las mismas reglas de CrearPlan.crear(Plan plan)
     */
-    boolean crear(List<Plan> planes);    
+    boolean crear(List<Plan> planes) throws CrearPlanEx;    
     
 }

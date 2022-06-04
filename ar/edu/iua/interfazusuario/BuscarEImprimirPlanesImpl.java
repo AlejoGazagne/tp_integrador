@@ -3,6 +3,7 @@ package ar.edu.iua.interfazusuario;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanes;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanesImpl;
@@ -14,10 +15,14 @@ public class BuscarEImprimirPlanesImpl implements BuscarEImprimirPlanes{
         List<Plan> planesEncontrados = new ArrayList<>();
         BuscarPlanes buscador = new BuscarPlanesImpl();
 
-        planesEncontrados = buscador.buscar(terminos.toLowerCase());
+        try {
+            planesEncontrados = buscador.buscar(terminos.toLowerCase());
+        } catch (ObjetoEx e) {
+            e.printStackTrace();
+        }
         
         System.out.println("Total de planes encontrados: " + planesEncontrados.size());
-        FormatoImprimir.imprimirFormato(planesEncontrados);
+        FormatoImprimir.imprimirFormatoLista(planesEncontrados);
         System.out.println("LISTO");
     }
 }

@@ -11,6 +11,6 @@ public interface BorrarPlan {
             - No se permite borrar un plan, excepto si el estado es BORRADOR
 
     */
-    boolean borrar(Plan plan);    
+    boolean borrar(Plan plan) throws BorrarPlanEx;    
     
 }

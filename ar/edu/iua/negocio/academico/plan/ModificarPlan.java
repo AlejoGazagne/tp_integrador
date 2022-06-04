@@ -9,6 +9,6 @@ public interface ModificarPlan {
         Se debe validar y retornar false si:
             - Ver las mismas reglas de CrearPlan.crear(Plan plan)
     */
-    boolean modificar(Plan plan);    
+    boolean modificar(Plan plan) throws ModificarPlanEx;    
     
 }
