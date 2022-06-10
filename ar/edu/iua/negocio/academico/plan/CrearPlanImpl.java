@@ -12,7 +12,7 @@ public class CrearPlanImpl implements CrearPlan {
         try {
             ok = ValidarPlanCrearModificar.validacion(plan);
             if (ok == true){
-                BaseDeDatos.setPlan(BaseDeDatos.getPlanes().size(), (Plan) plan.clone());
+                BaseDeDatos.setPlan(plan);
                 return true;
                  
             } else return false;
@@ -20,8 +20,8 @@ public class CrearPlanImpl implements CrearPlan {
         } catch (ValidarPlanEx e) {
             throw new CrearPlanEx(e.getMessage());
         }catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return false;
+            throw new CrearPlanEx(e.getMessage());
         }
     }
+
 }

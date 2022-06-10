@@ -14,18 +14,18 @@ public class BaseDeDatos {
     }
 
     public static List<Plan> getPlanes() throws CloneNotSupportedException {
-        return planes;
+        return new ArrayList<Plan>(planes);
     }
 
-    public static void setPlan(int ii, Plan aux) throws CloneNotSupportedException {
-        BaseDeDatos.planes.add(ii, aux);
+    public static void setPlan(Plan aux) throws CloneNotSupportedException {
+        BaseDeDatos.planes.add((Plan)aux.clone());
     }
 
     public static void modifyPlan(int ii, Plan aux) throws CloneNotSupportedException {
         BaseDeDatos.planes.set(ii, aux);
     }
 
-    public static void deletPlan(int ii) throws CloneNotSupportedException {
+    public static void deletePlan(int ii) throws CloneNotSupportedException {
         BaseDeDatos.planes.remove(ii);
     }
     

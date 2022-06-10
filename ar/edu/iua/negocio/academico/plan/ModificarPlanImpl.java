@@ -21,7 +21,7 @@ public class ModificarPlanImpl implements ModificarPlan {
         } catch (ValidarPlanEx e) {
             throw new ModificarPlanEx(e.getMessage());
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            throw new ModificarPlanEx(e.getMessage());
         }
         return false;
     }

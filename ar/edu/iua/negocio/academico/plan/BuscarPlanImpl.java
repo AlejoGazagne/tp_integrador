@@ -1,5 +1,7 @@
 package ar.edu.iua.negocio.academico.plan;
 
+import java.util.List;
+
 import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.plan.*;
 import ar.edu.iua.persistencia.BaseDeDatos;
@@ -12,8 +14,11 @@ public class BuscarPlanImpl implements BuscarPlan{
         try {
             ok = validacion(anio);
             if(ok==true){
-                for(int ii = 0; ii < BaseDeDatos.getPlanes().size(); ii++){
-                    if(BaseDeDatos.getPlanes().get(ii).getAnio().equals(anio)) return BaseDeDatos.getPlanes().get(ii);
+
+                List<Plan> planes = BaseDeDatos.getPlanes();
+
+                for(int ii = 0; ii < planes.size(); ii++){
+                    if(planes.get(ii).getAnio().equals(anio)) return planes.get(ii);
                 }
             }
         } catch (ObjetoEx e) {

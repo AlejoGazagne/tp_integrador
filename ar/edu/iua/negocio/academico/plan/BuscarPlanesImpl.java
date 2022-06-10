@@ -14,12 +14,16 @@ public class BuscarPlanesImpl implements BuscarPlanes {
         boolean ok = false;
         List<Plan> r = new ArrayList<Plan>();
 
+        
+
+
         try {
             ok = validar(terminos);
+            List<Plan> planes = BaseDeDatos.getPlanes();
             if(ok == true){
                 String arrayTerminos[] = terminos.split(" ");
                 FOR_PLAN:
-                for (Plan plan : BaseDeDatos.getPlanes()) {
+                for (Plan plan : planes) {
                     String toFullString = Transformar.traducirCadena(plan.fullToString().toLowerCase());
                     for (String termino : arrayTerminos) { 
                         if (toFullString.contains(Transformar.traducirCadena(termino.toLowerCase()))) {
@@ -33,7 +37,7 @@ public class BuscarPlanesImpl implements BuscarPlanes {
         } catch (ObjetoEx e) {
             throw new BuscarPlanEx(e.getMessage());
         }catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            throw new BuscarPlanEx(e.getMessage());
         }
         return r;
     }

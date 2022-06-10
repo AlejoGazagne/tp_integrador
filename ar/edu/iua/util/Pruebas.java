@@ -1,7 +1,7 @@
 package ar.edu.iua.util;
 
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
@@ -12,12 +12,13 @@ import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlan;
+//import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanes;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
-import ar.edu.iua.negocio.academico.plan.CrearPlan;
-import ar.edu.iua.negocio.academico.plan.CrearPlanEx;
-import ar.edu.iua.negocio.academico.plan.CrearPlanImpl;
+//import ar.edu.iua.negocio.academico.plan.CrearPlan;
+//import ar.edu.iua.negocio.academico.plan.CrearPlanEx;
+//import ar.edu.iua.negocio.academico.plan.CrearPlanImpl;
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlan;
@@ -29,7 +30,7 @@ public class Pruebas {
 
     public void probar() throws ObjetoEx{
         
-        List<Plan> planes = GenerarEjemplosDePlanes.generar(2, true);
+        List<Plan> planes = GenerarEjemplosDePlanes.generar(8, true);
 
         System.out.println("Se crearon " + planes.size() + " planes.");
 
@@ -93,15 +94,19 @@ public class Pruebas {
         BorrarPlan borrarPlan = new BorrarPlanImpl();
         Plan p = new PlanImpl();
         p.setAnio(2001);
-        //borrarPlan.borrar(p);
+        borrarPlan.borrar(p);
          
         FormatoImprimir.imprimirFormato();
-
-        List<Plan> listaBorrar = new ArrayList<Plan>();
-        listaBorrar.add(p);
-        System.out.println("\n\nBorramos todos los planes borradores de la base de datos");
-        BorrarPlanes borrarBaseDeDatos = new BorrarPlanesImpl();
-        borrarBaseDeDatos.borrar(listaBorrar);
+        List<Plan> listaBorrar;
+        try {
+            listaBorrar = BaseDeDatos.getPlanes();
+            System.out.println("\n\nBorramos todos los planes borradores de la base de datos");
+            BorrarPlanes borrarBaseDeDatos = new BorrarPlanesImpl();
+            borrarBaseDeDatos.borrar(listaBorrar);
+        } catch (CloneNotSupportedException e) {
+            e.getMessage();
+        }
+        
         
         FormatoImprimir.imprimirFormato();
         

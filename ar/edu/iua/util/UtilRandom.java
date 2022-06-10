@@ -24,7 +24,7 @@ public class UtilRandom {
         planAleatorio.setAnio(random.nextInt(30) + 1996);
         for(int jj = 0; jj < listaPlanes.size(); jj++){
             if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
-                planAleatorio.setAnio(random.nextInt(30) + 1996);
+                planAleatorio.setAnio(random.nextInt(40) + 1996);
                 jj = -1;
             }
         }
