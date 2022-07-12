@@ -6,6 +6,7 @@ import java.util.List;
 
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
+import ar.edu.iua.modelo.Objeto;
 import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
@@ -45,7 +46,7 @@ public class Pruebas {
             System.out.println("Se creo con exito");
         }
 
-        FormatoImprimir.imprimirFormato();
+        //FormatoImprimir.imprimirFormato();
 
         // Estas funciones las dejamos asi porque son solamente para imprimir por consola el plan y sus materias
         try {
@@ -54,30 +55,32 @@ public class Pruebas {
             e.printStackTrace();
         }
 
-        ModificarPlan modificarPlan = new ModificarPlanImpl();
+        
 
-        /*CrearPlan p = new CrearPlanImpl();
+        /*ModificarPlan modificarPlan = new ModificarPlanImpl();
+
+        CrearPlan p = new CrearPlanImpl();
 
         Plan romper = new PlanImpl();
         romper.setAnio(0);
         romper.setEstadoActivo();
         
-        p.crear(romper);*/
+        p.crear(romper);
 
         boolean si = false;
         
-        /*planes.get(0).getAnios().get(2).setNumero(-2);
+        planes.get(0).getAnios().get(2).setNumero(-2);
 
         si = modificarPlan.modificar(planes.get(0));
-        System.out.println("\n\nSe modifico el plan " + planes.get(0) + " ? = " + (si ? "SI" : "NO") );*/
+        System.out.println("\n\nSe modifico el plan " + planes.get(0) + " ? = " + (si ? "SI" : "NO") );
 
         planes.get(1).setEstadoBorrador();
         si = modificarPlan.modificar(planes.get(1));
         System.out.println("Se modifico el plan " + planes.get(1) + " ? = " + (si ? "SI" : "NO") );
 
-        /*planes.get(2).setAnio(2080);
+        planes.get(2).setAnio(2080);
         si = modificarPlan.modificar(planes.get(2));
-        System.out.println("Se modifico el plan " + planes.get(2) + " ? = " + (si ? "SI" : "NO") );*/
+        System.out.println("Se modifico el plan " + planes.get(2) + " ? = " + (si ? "SI" : "NO") );
 
         try {
             imprimirBase(BaseDeDatos.getPlanes());
@@ -107,9 +110,8 @@ public class Pruebas {
             e.getMessage();
         }
         
-        
+        */
         FormatoImprimir.imprimirFormato();
-        
     } 
 
     public static void imprimirBase(List<Plan> planes) {

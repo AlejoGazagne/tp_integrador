@@ -89,4 +89,11 @@ public class MateriaImpl extends Materia {
         return s.trim();
     }
 
+    public String fullToJson(){
+        String j = (anio != null ? "{\n \"anio\" : " + anio.toString() + " ," : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" +
+        (codigo != null ? " \"codigo\" : " + codigo.toString() + " , " : "") + "\n" + (cargaHoraria != null ? " \"cargaHoraria\" : " + cargaHoraria.toString() + " ," : "") + "\n";
+
+        return j.trim();
+    }
+
 }

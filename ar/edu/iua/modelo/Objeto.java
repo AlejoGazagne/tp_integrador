@@ -14,4 +14,6 @@ public abstract class Objeto implements Cloneable {
 
     abstract public String fullToString();
 
+    abstract public String fullToJson();
+
 }

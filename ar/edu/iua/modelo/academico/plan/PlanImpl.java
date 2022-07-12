@@ -100,4 +100,21 @@ public class PlanImpl extends Plan {
         return s;
     }
 
+    public String fullToJson(){
+        String j = (anio != null ? "{ \n \"anio\" : " + anio.toString() + " , " : "") + "\n" + (estado != null ? " \"estado\" : \"" + estado.toString() + "\" , " : "") + "\"anios\" : [" + "\n";
+
+        for(int ii = 0; ii < anios.size(); ii++){
+            String m = anios.get(ii).fullToJson();
+            if(ii == anios.size() - 1){
+                j += (m.length() > 0) ? m + "\n" : "";
+            } else {
+                j += (m.length() > 0) ? m + " , " : "";
+            }
+        }
+
+        j += " ]\n }";
+
+        return j.trim();
+    }
+
 }

@@ -93,4 +93,22 @@ public class AnioPlanImpl extends AnioPlan {
         return z.trim();
     }
 
+    public String fullToJson(){
+
+        String j = (numero != null ? "{\n \"anio\" : " + numero.toString() + ", " : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" , " : "") + "\n";
+
+        for(int ii = 0; ii < materias.size(); ii++){
+            String m = materias.get(ii).fullToJson();
+            if(ii == materias.size() - 1){
+                j += ( m.length() > 0 ) ? m + "\n" : "";
+            } else {
+                j += (m.length() > 0) ? m + "," : "";
+            }
+            
+        }
+        
+        j += " ]\n }";
+
+        return j.trim();
+    }
 }
