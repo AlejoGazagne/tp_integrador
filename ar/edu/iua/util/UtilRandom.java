@@ -22,10 +22,10 @@ public class UtilRandom {
 
         // PRIMERO SETTEAMOS UN ANIO ALEATORIO Y DESPUES EN EL FOR RECORREMOS TODA LA LISTA Y VERIFICAMOS QUE LOS VALORES SEAN DISTINTOS
         planAleatorio.setAnio(random.nextInt(30) + 1996);
-        for(int jj = 0; jj < listaPlanes.size(); jj++){
-            if(planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())){
+        for(int j = 0; j < listaPlanes.size(); j++){
+            if(planAleatorio.getAnio().equals(listaPlanes.get(j).getAnio())){
                 planAleatorio.setAnio(random.nextInt(40) + 1996);
-                jj = -1;
+                j = -1;
             }
         }
 
@@ -35,22 +35,22 @@ public class UtilRandom {
         
         // EN ESTE ANIO QUEREMOS SETTEAR LOS NOMBRES DE LOS ANIOSPLAN
         int cantAnios = random.nextInt(2)+5;
-        for(int ii = 0; ii < cantAnios; ii++){
+        for(int i = 0; i < cantAnios; i++){
             List<Materia> materiaList = new ArrayList<Materia>();
-            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, ii+1, listaPlanes.get(1).getAnios().get(ii).getNombre());
+            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, i+1, listaPlanes.get(1).getAnios().get(i).getNombre());
 
             // EN ESTE FOR QUEREMOS INGRESAR LAS MATERIAS AL PLAN
             int aux = random.nextInt(4)+8; 
-            for(int hh = 0; hh < aux; hh++){ 
-                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + (hh + 1)), 
+            for(int h = 0; h < aux; h++){ 
+                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + (h + 1)), 
                 materiaGenerador[random.nextInt(materiaGenerador.length)], Math.ceil(random.nextDouble(2.0)+1));
-                if(hh == 0){
+                if(h == 0){
                     materiaList.add(materia);
                 }else{
-                    for (int kk = 0; kk < materiaList.size(); kk++){
-                        if(materia.getNombre().equals(materiaList.get(kk).getNombre())){
+                    for (int k = 0; k < materiaList.size(); k++){
+                        if(materia.getNombre().equals(materiaList.get(k).getNombre())){
                             materia.setNombre(materiaGenerador[random.nextInt(materiaGenerador.length)]);
-                            kk = -1;
+                            k = -1;
                         }
                     }
                     materiaList.add(materia);

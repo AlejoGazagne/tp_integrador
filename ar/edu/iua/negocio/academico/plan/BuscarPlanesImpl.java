@@ -14,9 +14,6 @@ public class BuscarPlanesImpl implements BuscarPlanes {
         boolean ok = false;
         List<Plan> r = new ArrayList<Plan>();
 
-        
-
-
         try {
             ok = validar(terminos);
             List<Plan> planes = BaseDeDatos.getPlanes();

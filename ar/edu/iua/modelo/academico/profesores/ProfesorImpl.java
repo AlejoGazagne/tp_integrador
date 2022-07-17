@@ -9,9 +9,18 @@ public class ProfesorImpl extends Profesor{
     
     private Integer dni;
     private String nombre;
-    private double sueldo;
     private List<Materia> materias = new ArrayList<Materia>();
     
+    public ProfesorImpl(Integer dni, String nombre, List<Materia> materias) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.materias = materias;
+    }
+    
+    public ProfesorImpl(){
+
+    }
+
     public Integer getDni() {
         return dni;
     }
@@ -29,17 +38,9 @@ public class ProfesorImpl extends Profesor{
         
     }
 
-    public Double getSueldo() {
-        return sueldo;
-    }
-
-    public void setSueldo(Double sueldo) {
-        this.sueldo = sueldo;
-    }
-
     public List<Materia> getMaterias() {
         return materias;
-    }
+    } 
 
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
@@ -71,8 +72,7 @@ public class ProfesorImpl extends Profesor{
     }
 
     public String toString() {
-        return "ProfesorImpl [dni=" + dni + ", materias=" + materias + ", nombre=" + nombre + ", sueldo=" + sueldo
-                + "]";
+        return "ProfesorImpl [dni=" + dni + ", materias=" + materias + ", nombre=" + nombre + "]";
     }
 
     public String fullToString() {

@@ -7,9 +7,9 @@ public class ModificarProfesorImpl {
     public boolean modificar(Profesor profesor) throws ModificarProfesorEx{
         
         try {
-            for (int ii = 0; ii < BaseDeDatos.getProfesores().size(); ii++) {
-                if (BaseDeDatos.getProfesores().get(ii).getDni().equals(profesor.getDni())) {
-                    BaseDeDatos.modifyProfesor(ii, (Profesor) profesor.clone());
+            for (int i = 0; i < BaseDeDatos.getProfesores().size(); i++) {
+                if (BaseDeDatos.getProfesores().get(i).getDni().equals(profesor.getDni())) {
+                    BaseDeDatos.modifyProfesor(i, (Profesor) profesor.clone());
                     return true;
                 }
             }

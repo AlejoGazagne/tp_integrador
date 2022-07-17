@@ -316,7 +316,7 @@ public class GenerarEjemplosDePlanes {
 
     private static void generarYAgregarPlanesAleatoriamente(int cantidadAGenerar, List<Plan> planes){
         UtilRandom generacionDePlanes = new UtilRandom();
-        for (int ii = 0; ii < cantidadAGenerar; ii++){
+        for (int i = 0; i < cantidadAGenerar; i++){
             planes.add(generacionDePlanes.crearPlanAleatorio(planes));
         }
     }

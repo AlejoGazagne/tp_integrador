@@ -14,8 +14,8 @@ public class ModificarPlanesImpl implements ModificarPlanes{
         if(planes == null) return false;
 
         try {
-            for(int ii = 0; ii < planes.size(); ii++){
-                ok = modificarPlan.modificar(planes.get(ii));
+            for(int i = 0; i < planes.size(); i++){
+                ok = modificarPlan.modificar(planes.get(i));
             }
         } catch (ValidarPlanEx e) {
             throw new ModificarPlanEx(e.getMessage());

@@ -23,7 +23,7 @@ public class AnioPlanImpl extends AnioPlan {
         return plan;
     }
 
-    void setPlan(Plan plan) {
+   public void setPlan(Plan plan) {
         this.plan = plan;
     }
 
@@ -97,9 +97,9 @@ public class AnioPlanImpl extends AnioPlan {
 
         String j = (numero != null ? "{\n \"anio\" : " + numero.toString() + ", " : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" , " : "") + "\n";
 
-        for(int ii = 0; ii < materias.size(); ii++){
-            String m = materias.get(ii).fullToJson();
-            if(ii == materias.size() - 1){
+        for(int i = 0; i < materias.size(); i++){
+            String m = materias.get(i).fullToJson();
+            if(i == materias.size() - 1){
                 j += ( m.length() > 0 ) ? m + "\n" : "";
             } else {
                 j += (m.length() > 0) ? m + "," : "";

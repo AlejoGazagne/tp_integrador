@@ -8,7 +8,7 @@ public abstract class AnioPlan extends Objeto {
 
     abstract public Plan getPlan();
 
-    abstract void setPlan(Plan plan);
+    abstract public void setPlan(Plan plan);
 
     abstract public Integer getNumero();
 

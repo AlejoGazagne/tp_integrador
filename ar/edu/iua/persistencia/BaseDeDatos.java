@@ -23,12 +23,12 @@ public class BaseDeDatos {
         BaseDeDatos.planes.add((Plan)aux.clone());
     }
 
-    public static void modifyPlan(int ii, Plan aux) throws CloneNotSupportedException {
-        BaseDeDatos.planes.set(ii, aux);
+    public static void modifyPlan(int i, Plan aux) throws CloneNotSupportedException {
+        BaseDeDatos.planes.set(i, aux);
     }
 
-    public static void deletePlan(int ii) throws CloneNotSupportedException {
-        BaseDeDatos.planes.remove(ii);
+    public static void deletePlan(int i) throws CloneNotSupportedException {
+        BaseDeDatos.planes.remove(i);
     }
     
     //--
@@ -37,15 +37,15 @@ public class BaseDeDatos {
         return new ArrayList<Profesor>(profesores);
     }
 
-    public static void setProfesores(Profesor aux) throws CloneNotSupportedException {
+    public static void setProfesor(Profesor aux) throws CloneNotSupportedException {
         BaseDeDatos.profesores.add((Profesor) aux.clone());
     }
 
-    public static void deleteProfesor(int ii) throws CloneNotSupportedException {
-        BaseDeDatos.profesores.remove(ii);
+    public static void deleteProfesor(int i) throws CloneNotSupportedException {
+        BaseDeDatos.profesores.remove(i);
     }
 
-    public static void modifyProfesor(int ii, Profesor aux) throws CloneNotSupportedException {
-        BaseDeDatos.profesores.set(ii, aux);
+    public static void modifyProfesor(int i, Profesor aux) throws CloneNotSupportedException {
+        BaseDeDatos.profesores.set(i, aux);
     }
 }

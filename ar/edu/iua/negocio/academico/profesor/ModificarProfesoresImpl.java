@@ -11,8 +11,8 @@ public class ModificarProfesoresImpl {
         boolean ok = false; 
 
         if(profesores == null) return false;
-        for(int ii = 0; ii < profesores.size(); ii++){
-            ok = modificarProfe.modificar(profesores.get(ii));
+        for(int i = 0; i < profesores.size(); i++){
+            ok = modificarProfe.modificar(profesores.get(i));
         }
 
         return ok;

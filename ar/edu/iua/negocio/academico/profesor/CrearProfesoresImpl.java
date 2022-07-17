@@ -11,8 +11,8 @@ public class CrearProfesoresImpl {
 
         if(profesores == null) return false;
         
-        for(int ii = 0; ii < profesores.size(); ii++){
-            crearProfesor.crear(profesores.get(ii));
+        for(int i = 0; i < profesores.size(); i++){
+            crearProfesor.crear(profesores.get(i));
         }
 
         return true;

@@ -7,13 +7,13 @@ import ar.edu.iua.util.ValidarPlanEx;
 
 public class ModificarPlanImpl implements ModificarPlan {
     public boolean modificar(Plan plan) throws ModificarPlanEx{
-
+        
         try {
             if (ValidarPlanCrearModificar.validacion(plan)) {
                 
-                for (int ii = 0; ii < BaseDeDatos.getPlanes().size(); ii++) {
-                    if (BaseDeDatos.getPlanes().get(ii).getAnio().equals(plan.getAnio())) {
-                        BaseDeDatos.modifyPlan(ii, (Plan) plan.clone());
+                for (int i = 0; i < BaseDeDatos.getPlanes().size(); i++) {
+                    if (BaseDeDatos.getPlanes().get(i).getAnio().equals(plan.getAnio())) {
+                        BaseDeDatos.modifyPlan(i, (Plan) plan.clone());
                         return true;
                     }
                 }

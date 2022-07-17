@@ -15,10 +15,6 @@ public abstract class Profesor extends Objeto {
 
     abstract public void setNombre(String nombre);
 
-    abstract public Double getSueldo();
-
-    abstract public void setSueldo(Double sueldo);
-
     abstract public List<Materia> getMaterias();
 
     abstract public void setMaterias(List<Materia> materias);

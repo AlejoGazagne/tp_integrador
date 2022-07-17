@@ -3,6 +3,7 @@ package ar.edu.iua.util;
 import java.util.List;
 
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.profesores.Profesor;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class FormatoImprimir {
@@ -30,8 +31,8 @@ public class FormatoImprimir {
 
     public static int contarMaterias(Plan plan){
         int cantMaterias = 0;
-        for(int ii = 0; ii < plan.getAnios().size(); ii++){
-            cantMaterias = cantMaterias + plan.getAnios().get(ii).getMaterias().size();
+        for(int i = 0; i < plan.getAnios().size(); i++){
+            cantMaterias = cantMaterias + plan.getAnios().get(i).getMaterias().size();
         }
 
         return cantMaterias;
@@ -54,6 +55,24 @@ public class FormatoImprimir {
                     System.out.println("NO ACTIVO"); 
                 }
             }
+        
+    }
+
+    public static void imprimirProfesores() {
+        List<Profesor> base;
+        try {
+            base = BaseDeDatos.getProfesores();
+            for(int i = 0; i < base.size(); i++){
+                System.out.print(base.get(i).getDni() + "\t");
+                System.out.println(base.get(i).getNombre());
+                for(int j = 0; j < base.get(i).getMaterias().size(); j++){
+                    System.out.println(base.get(i).getMaterias().get(j));
+                }
+                System.out.println("----------------------------------------");
+            }
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         
     }
 

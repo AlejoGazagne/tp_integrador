@@ -1,21 +1,19 @@
 package ar.edu.iua.webServices;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.util.Map;
-
-//import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
+import ar.edu.iua.negocio.academico.plan.ModificarPlanEx;
+import ar.edu.iua.negocio.academico.plan.ModificarPlanImpl;
 
-public class buscarPlanHandler implements HttpHandler {
-
+public class modificarPlanHandler implements HttpHandler{
+    
     public void handle(HttpExchange exchange) throws IOException {
 
         //String protocol = exchange.getProtocol();
@@ -33,29 +31,30 @@ public class buscarPlanHandler implements HttpHandler {
         
     }
 
+
     private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
-        BuscarPlanImpl encontrado = new BuscarPlanImpl();
-        //Gson gson = new Gson();
+        
+        ModificarPlanImpl modificarPlan = new ModificarPlanImpl();
         int anio = Integer.parseInt(params.get("anio"));
-        Plan plan = new PlanImpl(); 
-    
+        int modificacion = Integer.parseInt(params.get("modif"));
+        BuscarPlanImpl buscarPlan = new BuscarPlanImpl();
+        PlanImpl plan = null;
+
         try {
-            plan = (PlanImpl) encontrado.buscar(anio);
-            String msg = plan.fullToJson();
-            exchange.sendResponseHeaders(200, msg.length());
+            plan = (PlanImpl) buscarPlan.buscar(anio);
+            plan.setAnio(modificacion);
+            modificarPlan.modificar(plan);
+            String jsonEstrinj = plan.fullToJson();
+            exchange.sendResponseHeaders(200, jsonEstrinj.length());
             OutputStream os = exchange.getResponseBody();
-            os.write(msg.getBytes());
+            os.write(jsonEstrinj.getBytes());
             os.close();
-
-        } catch (BuscarPlanEx e) {
-            System.out.println(e.getMessage());
-            String msg = "204 No contents";
-            exchange.sendResponseHeaders(200, msg.length());
-            OutputStream os = exchange.getResponseBody();
-            os.write(msg.getBytes());
-         
-        }
             
-    }
+        } catch (BuscarPlanEx | ModificarPlanEx e) {
+            System.out.println(e.getMessage());
+            exchange.sendResponseHeaders(204, 0);
+        }
 
+        
+    }
 }

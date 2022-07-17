@@ -1,6 +1,7 @@
 package ar.edu.iua.util;
 
 
+import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.modelo.academico.profesores.Profesor;
 import ar.edu.iua.negocio.academico.plan.BorrarPlan;
 //import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
@@ -24,7 +26,11 @@ import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlan;
 import ar.edu.iua.negocio.academico.plan.ModificarPlanImpl;
+import ar.edu.iua.negocio.academico.profesor.CrearProfesorEx;
+import ar.edu.iua.negocio.academico.profesor.CrearProfesorImpl;
+import ar.edu.iua.negocio.academico.profesor.CrearProfesoresImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
+import ar.edu.iua.webServices.Server;
 
 
 public class Pruebas {
@@ -46,6 +52,21 @@ public class Pruebas {
             System.out.println("Se creo con exito");
         }
 
+        List<Profesor> profesores = new ArrayList<Profesor>();
+        profesores = GenerarEjemplosDeProfesores.generarYAgregarProfesoresAleatoriamente();
+
+        CrearProfesoresImpl crearProfesores = new CrearProfesoresImpl();
+        try {
+            crearProfesores.crear(profesores);
+        } catch (CrearProfesorEx e) {
+            e.printStackTrace();
+        }
+
+        FormatoImprimir.imprimirProfesores();
+
+        /*FormatoImprimir.imprimirFormatoLista(planes);
+
+        
         //FormatoImprimir.imprimirFormato();
 
         // Estas funciones las dejamos asi porque son solamente para imprimir por consola el plan y sus materias
@@ -57,7 +78,7 @@ public class Pruebas {
 
         
 
-        /*ModificarPlan modificarPlan = new ModificarPlanImpl();
+        ModificarPlan modificarPlan = new ModificarPlanImpl();
 
         CrearPlan p = new CrearPlanImpl();
 
@@ -108,10 +129,12 @@ public class Pruebas {
             borrarBaseDeDatos.borrar(listaBorrar);
         } catch (CloneNotSupportedException e) {
             e.getMessage();
-        }
+        }*/
         
-        */
         FormatoImprimir.imprimirFormato();
+        
+        //Server.server();
+
     } 
 
     public static void imprimirBase(List<Plan> planes) {

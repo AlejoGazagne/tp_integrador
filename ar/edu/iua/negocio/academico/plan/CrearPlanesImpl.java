@@ -11,8 +11,8 @@ public class CrearPlanesImpl implements CrearPlanes{
         CrearPlanImpl crearPlan = new CrearPlanImpl();
         if(planes == null) return false;
         try {
-            for(int ii = 0; ii < planes.size(); ii++){
-                if(crearPlan.crear(planes.get(ii)) == false);
+            for(int i = 0; i < planes.size(); i++){
+                if(crearPlan.crear(planes.get(i)) == false);
             }
         } catch (ValidarPlanEx e) {
            throw new CrearPlanEx(e.getMessage());

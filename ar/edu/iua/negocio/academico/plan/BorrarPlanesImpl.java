@@ -8,9 +8,9 @@ public class BorrarPlanesImpl implements BorrarPlanes{
     public boolean borrar(List<Plan> planes) throws BorrarPlanEx{
 
         if(planes == null) return false;
-        for(int ii = 0; ii < planes.size(); ii++){
+        for(int i = 0; i < planes.size(); i++){
             BorrarPlan borrarPlan = new BorrarPlanImpl();
-            borrarPlan.borrar(planes.get(ii));
+            borrarPlan.borrar(planes.get(i));
         }
         return true;
     }

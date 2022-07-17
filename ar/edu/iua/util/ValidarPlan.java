@@ -9,24 +9,24 @@ public class ValidarPlan {
         if(plan.getAnio() == 0 && plan.isEstadoBorrador() == false) return false; 
         if(plan.getAnio() < 1990 || plan.getAnio() > 2040) return false; 
         if(plan.getAnios() == null && plan.isEstadoBorrador() == false) return false;
-        for(int ii = 0; ii < plan.getAnios().size(); ii++){
-            if(!plan.getAnios().get(ii).getPlan().equals(plan)) return false;
-            if(plan.getAnios().get(ii).getNumero() <= 0) return false;
-            if(plan.getAnios().get(ii).getNumero() == null && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getNumero() != ii + 1) return false;
-            for(int kk = 0; kk < plan.getAnios().size(); kk++){
-                if(plan.getAnios().get(kk).getNumero() == plan.getAnios().get(ii).getNumero() && (ii != kk)) return false;
-                if(plan.getAnios().get(kk).getMaterias().get(kk).getCodigo() == plan.getAnios().get(ii).getMaterias().get(ii).getCodigo() && (ii != kk)) return false;
-                if(!plan.getAnios().get(ii).getMaterias().get(kk).getAnio().equals(plan.getAnios().get(ii)))return false; 
+        for(int i = 0; i < plan.getAnios().size(); i++){
+            if(!plan.getAnios().get(i).getPlan().equals(plan)) return false;
+            if(plan.getAnios().get(i).getNumero() <= 0) return false;
+            if(plan.getAnios().get(i).getNumero() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getNumero() != i + 1) return false;
+            for(int k = 0; k < plan.getAnios().size(); k++){
+                if(plan.getAnios().get(k).getNumero() == plan.getAnios().get(i).getNumero() && (i != k)) return false;
+                if(plan.getAnios().get(k).getMaterias().get(k).getCodigo() == plan.getAnios().get(i).getMaterias().get(i).getCodigo() && (i != k)) return false;
+                if(!plan.getAnios().get(i).getMaterias().get(k).getAnio().equals(plan.getAnios().get(i)))return false; 
             }
-            if(plan.getAnios().get(ii).getNombre() == null && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getMaterias() == null && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getCodigo() <= 0) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getCodigo() == null && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getNombre() == null && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getCargaHoraria() == 0.0 && plan.isEstadoBorrador() == false) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getCargaHoraria() <= 0) return false;
-            if(plan.getAnios().get(ii).getMaterias().get(ii).getCargaHoraria() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getNombre() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getMaterias() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getCodigo() <= 0) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getCodigo() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getNombre() == null && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getCargaHoraria() == 0.0 && plan.isEstadoBorrador() == false) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getCargaHoraria() <= 0) return false;
+            if(plan.getAnios().get(i).getMaterias().get(i).getCargaHoraria() == null && plan.isEstadoBorrador() == false) return false;
         }
         return true;
     }
