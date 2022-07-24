@@ -64,10 +64,10 @@ public class FormatoImprimir {
         try {
             base = BaseDeDatos.getProfesores();
             for(int i = 0; i < base.size(); i++){
-                System.out.print(base.get(i).getDni() + "\t");
-                System.out.println(base.get(i).getNombre());
+                System.out.print("DNI: " + base.get(i).getDni() + "\n");
+                System.out.println("Nombre: " + base.get(i).getNombre());
                 for(int j = 0; j < base.get(i).getMaterias().size(); j++){
-                    System.out.println(base.get(i).getMaterias().get(j));
+                    System.out.println("\t" + base.get(i).getMaterias().get(j));
                 }
                 System.out.println("----------------------------------------");
             }

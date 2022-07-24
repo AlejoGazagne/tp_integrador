@@ -9,10 +9,8 @@ import java.util.Map;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
-import ar.edu.iua.negocio.academico.plan.BorrarPlanes;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
 
 public class BorrarPlanesHandler implements HttpHandler {
@@ -35,15 +33,15 @@ public class BorrarPlanesHandler implements HttpHandler {
     }
 
     private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
-        List<Plan> borrados = new ArrayList<>();
+        List<PlanImpl> borrados = new ArrayList<>();
         
         for (Map.Entry<String, String> entry : params.entrySet()) {
-            Plan plan = new PlanImpl();
+            PlanImpl plan = new PlanImpl();
             plan.setAnio(Integer.parseInt(entry.getValue()));
             borrados.add(plan);
         }
 
-        BorrarPlanes borrador = new BorrarPlanesImpl();
+        BorrarPlanesImpl borrador = new BorrarPlanesImpl();
         try {
             borrador.borrar(borrados);
             String msg = "200: Se borraron los planes";

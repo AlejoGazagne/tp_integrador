@@ -172,7 +172,11 @@ public class GenerarEjemplosDeProfesores {
 
 
             List<MateriaImpl> materias11 = new ArrayList<>();
-            materias11.add(planAnio.getAnios().get(4).getMaterias().get(11));
+            materias11.add(planAnio.getAnios().get(4).getMaterias().get(9));
+            materias11.add(planAnio.getAnios().get(0).getMaterias().get(5));
+            materias11.add(planAnio.getAnios().get(1).getMaterias().get(5));
+            materias11.add(planAnio.getAnios().get(2).getMaterias().get(3));
+            materias11.add(planAnio.getAnios().get(0).getMaterias().get(4));
             Profesor profe11 = new ProfesorImpl();
             profe11 = profes.get(11);
             profe11.setMaterias(materias11);
@@ -180,7 +184,11 @@ public class GenerarEjemplosDeProfesores {
 
             
             List<MateriaImpl> materias12 = new ArrayList<>();
-
+            materias12.add(planAnio.getAnios().get(2).getMaterias().get(5));
+            materias12.add(planAnio.getAnios().get(2).getMaterias().get(4));
+            materias12.add(planAnio.getAnios().get(1).getMaterias().get(4));
+            materias12.add(planAnio.getAnios().get(2).getMaterias().get(3));
+            materias12.add(planAnio.getAnios().get(3).getMaterias().get(4));
             Profesor profe12 = new ProfesorImpl();
             profe12 = profes.get(12);
             profe12.setMaterias(materias12);
@@ -188,7 +196,11 @@ public class GenerarEjemplosDeProfesores {
 
 
             List<MateriaImpl> materias13 = new ArrayList<>();
-
+            materias13.add(planAnio.getAnios().get(0).getMaterias().get(7));
+            materias13.add(planAnio.getAnios().get(0).getMaterias().get(2));
+            materias13.add(planAnio.getAnios().get(1).getMaterias().get(2));
+            materias13.add(planAnio.getAnios().get(1).getMaterias().get(3));
+            materias13.add(planAnio.getAnios().get(1).getMaterias().get(10));
             Profesor profe13 = new ProfesorImpl();
             profe13 = profes.get(13);
             profe13.setMaterias(materias13);
@@ -196,7 +208,11 @@ public class GenerarEjemplosDeProfesores {
 
 
             List<MateriaImpl> materias14 = new ArrayList<>();
-
+            materias14.add(planAnio.getAnios().get(2).getMaterias().get(0));
+            materias14.add(planAnio.getAnios().get(2).getMaterias().get(2));
+            materias14.add(planAnio.getAnios().get(3).getMaterias().get(0));
+            materias14.add(planAnio.getAnios().get(4).getMaterias().get(3));
+            materias14.add(planAnio.getAnios().get(4).getMaterias().get(4));
             Profesor profe14 = new ProfesorImpl();
             profe14 = profes.get(14);
             profe14.setMaterias(materias14);
@@ -204,7 +220,11 @@ public class GenerarEjemplosDeProfesores {
 
 
             List<MateriaImpl> materias15 = new ArrayList<>();
-
+            materias15.add(planAnio.getAnios().get(2).getMaterias().get(0));
+            materias15.add(planAnio.getAnios().get(2).getMaterias().get(11));
+            materias15.add(planAnio.getAnios().get(3).getMaterias().get(0));
+            materias15.add(planAnio.getAnios().get(4).getMaterias().get(8));
+            materias15.add(planAnio.getAnios().get(4).getMaterias().get(9));
             Profesor profe15 = new ProfesorImpl();
             profe15 = profes.get(15);
             profe15.setMaterias(materias15);

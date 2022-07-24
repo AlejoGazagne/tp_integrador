@@ -6,7 +6,6 @@ import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class CrearProfesorImpl {
     public boolean crear(ProfesorImpl profe) throws CrearProfesorEx{
-  
 
         try {
             BaseDeDatos.setProfesor((ProfesorImpl) profe);
