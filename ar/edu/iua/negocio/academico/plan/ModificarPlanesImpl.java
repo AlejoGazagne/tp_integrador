@@ -21,7 +21,7 @@ public class ModificarPlanesImpl implements ModificarPlanes{
             throw new ModificarPlanEx(e.getMessage());
         }
         
-        
+
         return ok;
     }
 }

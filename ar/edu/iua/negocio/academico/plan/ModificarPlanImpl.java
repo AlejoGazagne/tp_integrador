@@ -1,5 +1,7 @@
 package ar.edu.iua.negocio.academico.plan;
 
+import java.util.List;
+
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.ValidarPlanCrearModificar;
@@ -10,9 +12,10 @@ public class ModificarPlanImpl implements ModificarPlan {
         
         try {
             if (ValidarPlanCrearModificar.validacion(plan)) {
+                List<Plan> base = BaseDeDatos.getPlanes();
                 
-                for (int i = 0; i < BaseDeDatos.getPlanes().size(); i++) {
-                    if (BaseDeDatos.getPlanes().get(i).getAnio().equals(plan.getAnio())) {
+                for (int i = 0; i < base.size(); i++) {
+                    if (base.get(i).getAnio().equals(plan.getAnio())) {
                         BaseDeDatos.modifyPlan(i, (Plan) plan.clone());
                         return true;
                     }
@@ -20,9 +23,11 @@ public class ModificarPlanImpl implements ModificarPlan {
             }
         } catch (ValidarPlanEx e) {
             throw new ModificarPlanEx(e.getMessage());
+
         } catch (CloneNotSupportedException e) {
             throw new ModificarPlanEx(e.getMessage());
         }
+
         return false;
     }
 }

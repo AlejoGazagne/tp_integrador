@@ -15,7 +15,7 @@ public class UtilRandom {
     public Plan crearPlanAleatorio(List<Plan> listaPlanes){
         Random random = new Random(System.currentTimeMillis());
         Plan planAleatorio = new PlanImpl();
-        List<AnioPlan> anioList = new ArrayList<AnioPlan>();
+        List<AnioPlanImpl> anioList = new ArrayList<AnioPlanImpl>();
         String materiaGenerador[]={"Matematica","Historia","Biologia","Geografia","Robotica","Lengua","Informatica", 
                                     "Latin","Ingles","Quimica","Fisica","Educacion para la Salud","Educacion Fisica",
                                     "Musica","Plastica"};
@@ -36,16 +36,16 @@ public class UtilRandom {
         // EN ESTE ANIO QUEREMOS SETTEAR LOS NOMBRES DE LOS ANIOSPLAN
         int cantAnios = random.nextInt(2)+5;
         for(int i = 0; i < cantAnios; i++){
-            List<Materia> materiaList = new ArrayList<Materia>();
-            AnioPlan anioAleatorio = new AnioPlanImpl(planAleatorio, i+1, listaPlanes.get(1).getAnios().get(i).getNombre());
+            List<MateriaImpl> materiaList = new ArrayList<MateriaImpl>();
+            AnioPlan anioAleatorio = new AnioPlanImpl(i+1, listaPlanes.get(1).getAnios().get(i).getNombre());
 
             // EN ESTE FOR QUEREMOS INGRESAR LAS MATERIAS AL PLAN
             int aux = random.nextInt(4)+8; 
             for(int h = 0; h < aux; h++){ 
-                Materia materia = new MateriaImpl(anioAleatorio, Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + (h + 1)), 
+                Materia materia = new MateriaImpl(Integer.parseInt("" + planAleatorio.getAnio() + anioAleatorio.getNumero() + (h + 1)), 
                 materiaGenerador[random.nextInt(materiaGenerador.length)], Math.ceil(random.nextDouble(2.0)+1));
                 if(h == 0){
-                    materiaList.add(materia);
+                    materiaList.add((MateriaImpl) materia);
                 }else{
                     for (int k = 0; k < materiaList.size(); k++){
                         if(materia.getNombre().equals(materiaList.get(k).getNombre())){
@@ -53,11 +53,11 @@ public class UtilRandom {
                             k = -1;
                         }
                     }
-                    materiaList.add(materia);
+                    materiaList.add((MateriaImpl) materia);
                 }
             }
             anioAleatorio.setMaterias(materiaList);
-            anioList.add(anioAleatorio);
+            anioList.add((AnioPlanImpl) anioAleatorio);
         }
         planAleatorio.setAnios(anioList);
 

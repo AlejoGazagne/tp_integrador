@@ -12,10 +12,26 @@ public class Server {
             
             HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-            server.createContext("/buscarPlan", new buscarPlanHandler()); // http://localhost:8080/buscarPlan
-            server.createContext("/modificarPlan", new modificarPlanHandler()); // http://localhost:8080/modificarPlan
-            server.createContext("/borrarPlan", new borrarPlanHandler()); // http://localhost:8080/borarPlan
+            server.createContext("/buscarPlan", new BuscarPlanHandler()); // http://localhost:8080/buscarPlan
+            server.createContext("/buscarPlanes", new BuscarPlanesHandler()); // http://localhost:8080/buscarPlanes
+
+            server.createContext("/modificarPlan", new ModificarPlanHandler()); // http://localhost:8080/modificarPlan
+            server.createContext("/modificarPlanes", new ModificarPlanesHandler()); // http://localhost:8080/modificarPlanes
+
+            server.createContext("/borrarPlan", new BorrarPlanHandler()); // http://localhost:8080/borrarPlan
+            server.createContext("/borrarPlanes", new BorrarPlanesHandler()); // http://localhost:8080/borrarPlanes
+
+            server.createContext("/crearPlan", new CrearPlanHandler()); // http://localhost:8080/crearPlan
+            server.createContext("/crearPlanes", new CrearPlanesHandler()); // http://localhost:8080/crearPlanes
+
             
+            server.createContext("/crearProfesor", new CrearProfesorHandler()); // http://localhost:8080/crearProfesor
+            server.createContext("/crearProfesores", new CrearProfesorHandler()); // http://localhost:8080/crearProfesor
+
+            server.createContext("/buscarProfesor", new BuscarProfesorHandler()); // http://localhost:8080/buscarProfesor
+            server.createContext("/buscarProfesores", new BuscarProfesoresHandler()); // http://localhost:8080/buscarProfesores
+
+
             server.setExecutor(null);
             server.start();
 

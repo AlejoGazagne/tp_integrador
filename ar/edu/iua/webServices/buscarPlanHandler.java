@@ -9,12 +9,16 @@ import java.util.Map;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 
-public class buscarPlanHandler implements HttpHandler {
+import com.google.gson.Gson;
+
+
+
+public class BuscarPlanHandler implements HttpHandler {
 
     public void handle(HttpExchange exchange) throws IOException {
 
@@ -38,24 +42,23 @@ public class buscarPlanHandler implements HttpHandler {
         //Gson gson = new Gson();
         int anio = Integer.parseInt(params.get("anio"));
         Plan plan = new PlanImpl(); 
-    
+        
         try {
             plan = (PlanImpl) encontrado.buscar(anio);
-            String msg = plan.fullToJson();
-            exchange.sendResponseHeaders(200, msg.length());
-            OutputStream os = exchange.getResponseBody();
-            os.write(msg.getBytes());
-            os.close();
-
         } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());
-            String msg = "204 No contents";
-            exchange.sendResponseHeaders(200, msg.length());
+            String msg = e.getMessage();
+            exchange.sendResponseHeaders(400, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
          
         }
-            
+        Gson gson = new Gson();
+        String msg = gson.toJson(plan);
+        exchange.sendResponseHeaders(200, msg.length());
+        OutputStream os = exchange.getResponseBody();
+        os.write(msg.getBytes());
+        os.close();
     }
 
 }

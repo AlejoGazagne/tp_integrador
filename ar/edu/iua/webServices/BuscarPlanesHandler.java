@@ -7,16 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
-import ar.edu.iua.negocio.academico.plan.BorrarPlanes;
-import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanesImpl;
 
-public class BorrarPlanesHandler implements HttpHandler {
 
+
+
+public class BuscarPlanesHandler implements HttpHandler {
+   
     public void handle(HttpExchange exchange) throws IOException {
 
         //String protocol = exchange.getProtocol();
@@ -34,34 +36,33 @@ public class BorrarPlanesHandler implements HttpHandler {
         
     }
 
-    private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
-        List<Plan> borrados = new ArrayList<>();
-        
-        for (Map.Entry<String, String> entry : params.entrySet()) {
-            Plan plan = new PlanImpl();
-            plan.setAnio(Integer.parseInt(entry.getValue()));
-            borrados.add(plan);
-        }
+    //como lo escribiria el profe
+    //http://localhost:8080/buscar?termino=asdas
 
-        BorrarPlanes borrador = new BorrarPlanesImpl();
+    private void executeResponse(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
+        BuscarPlanesImpl buscadorPlanes = new BuscarPlanesImpl();
+        List<Plan> planesEncontrados = new ArrayList<>();
+        Gson gson = new Gson();
+        String termino = params.get("terms");
+        
         try {
-            borrador.borrar(borrados);
-            String msg = "200: Se borraron los planes";
+            planesEncontrados = buscadorPlanes.buscar(termino.toString());
+            String msg = gson.toJson(planesEncontrados);
             exchange.sendResponseHeaders(200, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
-        } catch (BorrarPlanEx e) {
+            
+        } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = e.getMessage();
             exchange.sendResponseHeaders(400, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
-            os.close();
+            e.printStackTrace();
         }
-
-        
-        
     }
+
+
 
 }

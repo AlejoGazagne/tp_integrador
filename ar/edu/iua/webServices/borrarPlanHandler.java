@@ -3,7 +3,6 @@ package ar.edu.iua.webServices;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
@@ -13,7 +12,7 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.util.Map;
 
-public class borrarPlanHandler implements HttpHandler{
+public class BorrarPlanHandler implements HttpHandler{
 
     public void handle(HttpExchange exchange) throws IOException {
 
@@ -51,7 +50,7 @@ public class borrarPlanHandler implements HttpHandler{
         } catch (BorrarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = e.getMessage();
-            exchange.sendResponseHeaders(200, msg.length());
+            exchange.sendResponseHeaders(400, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();

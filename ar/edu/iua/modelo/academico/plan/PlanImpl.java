@@ -7,7 +7,11 @@ public class PlanImpl extends Plan {
 
     private Integer anio;
     private Estado estado;
-    private List<AnioPlan> anios = new ArrayList<AnioPlan>();
+    private List<AnioPlanImpl> anios = new ArrayList<AnioPlanImpl>();
+
+    public PlanImpl(){
+        
+    }
 
     public void set(Plan plan){
         this.anio = plan.getAnio();
@@ -51,11 +55,11 @@ public class PlanImpl extends Plan {
         return estado == Estado.NO_ACTIVO;
     }
 
-    public List<AnioPlan> getAnios() {
+    public List<AnioPlanImpl> getAnios() {
         return anios;
     }
 
-    public void setAnios(List<AnioPlan> anios) {
+    public void setAnios(List<AnioPlanImpl> anios) {
         this.anios = anios;
     }
 

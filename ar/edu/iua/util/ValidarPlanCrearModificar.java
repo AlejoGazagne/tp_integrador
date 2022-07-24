@@ -10,14 +10,14 @@ public class ValidarPlanCrearModificar {
         if(plan.getAnio() < 1990 || plan.getAnio() > 2040) throw new ValidarPlanEx("El anio del plan esta mal");
         if(plan.getAnios() == null && plan.isEstadoBorrador() == false) throw new ValidarPlanEx("Anio es null");
         for(int i = 0; i < plan.getAnios().size(); i++){
-            if(!plan.getAnios().get(i).getPlan().equals(plan)) throw new ValidarPlanEx("Ya hay un plan igual");
+            //if(!plan.getAnios().get(i).getPlan().equals(plan)) throw new ValidarPlanEx("Ya hay un plan igual");
             if(plan.getAnios().get(i).getNumero() <= 0) throw new ValidarPlanEx("El anio plan es menor a 0");
             if(plan.getAnios().get(i).getNumero() == null && plan.isEstadoBorrador() == false) throw new ValidarPlanEx("El numero del plan es null");
             if(plan.getAnios().get(i).getNumero() != i + 1) throw new ValidarPlanEx("Los anios no son secuenciales");
             for(int k = 0; k < plan.getAnios().size(); k++){
                 if(plan.getAnios().get(k).getNumero() == plan.getAnios().get(i).getNumero() && (i != k)) throw new ValidarPlanEx("Ya hay un numero de anio plan igual");
                 if(plan.getAnios().get(k).getMaterias().get(k).getCodigo() == plan.getAnios().get(i).getMaterias().get(i).getCodigo() && (i != k)) throw new ValidarPlanEx("El codigo de la materia esta repetido");
-                if(!plan.getAnios().get(i).getMaterias().get(k).getAnio().equals(plan.getAnios().get(i))) throw new ValidarPlanEx("Anio de materia diferente al anio del plan");
+                //if(!plan.getAnios().get(i).getMaterias().get(k).getAnio().equals(plan.getAnios().get(i))) throw new ValidarPlanEx("Anio de materia diferente al anio del plan");
             }
             if(plan.getAnios().get(i).getNombre() == null && plan.isEstadoBorrador() == false) throw new ValidarPlanEx("nombre del anio plan null");
             if(plan.getAnios().get(i).getMaterias() == null && plan.isEstadoBorrador() == false) throw new ValidarPlanEx("No hay lista de materias");

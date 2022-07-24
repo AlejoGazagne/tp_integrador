@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import ar.edu.iua.modelo.academico.plan.Materia;
-import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.profesores.Profesor;
 import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;

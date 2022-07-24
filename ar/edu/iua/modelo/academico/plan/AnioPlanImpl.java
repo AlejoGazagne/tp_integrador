@@ -5,26 +5,15 @@ import java.util.List;
 
 public class AnioPlanImpl extends AnioPlan {
 
-    private Plan plan;
     private Integer numero;
     private String nombre;
-    private List<Materia> materias = new ArrayList<Materia>();
+    private List<MateriaImpl> materias = new ArrayList<MateriaImpl>();
+    
+    public AnioPlanImpl() {}
 
-    public AnioPlanImpl(Plan plan, Integer numero, String nombre) {
-        this.plan = plan;
+    public AnioPlanImpl(Integer numero, String nombre) {
         this.numero = numero;
         this.nombre = nombre;
-    }
-    public AnioPlanImpl() {
-  
-    }
-
-    public Plan getPlan() {
-        return plan;
-    }
-
-   public void setPlan(Plan plan) {
-        this.plan = plan;
     }
 
     public Integer getNumero() {
@@ -44,11 +33,11 @@ public class AnioPlanImpl extends AnioPlan {
         this.nombre = nombre;
     }
 
-    public List<Materia> getMaterias() {
+    public List<MateriaImpl> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(List<Materia> materias) {
+    public void setMaterias(List<MateriaImpl> materias) {
         this.materias = materias;
     }
 

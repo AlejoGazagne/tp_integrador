@@ -2,28 +2,17 @@ package ar.edu.iua.modelo.academico.plan;
 
 public class MateriaImpl extends Materia {
 
-    private AnioPlan anio;
     private Integer codigo;
     private String nombre;
     private Double cargaHoraria;
 
-    public MateriaImpl(AnioPlan anio, Integer codigo, String nombre, Double cargaHoraria) {
-        this.anio = anio;
+    public MateriaImpl() {
+    }
+
+    public MateriaImpl(Integer codigo, String nombre, Double cargaHoraria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cargaHoraria = cargaHoraria;
-    }
-
-    public MateriaImpl(){
-
-    }
-
-    public AnioPlan getAnio() {
-        return anio;
-    }
-
-    public void setAnio(AnioPlan anio) {
-        this.anio = anio;
     }
 
     public Integer getCodigo() {
@@ -83,14 +72,14 @@ public class MateriaImpl extends Materia {
 
     public String fullToString() {
 
-        String s = (anio != null ? anio.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n" +
+        String s = (nombre != null ? nombre.toString() : "") + "\n" +
         (codigo != null ? codigo.toString() : "") + "\n" + (cargaHoraria != null ? cargaHoraria.toString() : "") + "\n";
 
         return s.trim();
     }
 
     public String fullToJson(){
-        String j = (anio != null ? "{\n \"anio\" : " + anio.toString() + " ," : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" +
+        String j = (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" +
         (codigo != null ? " \"codigo\" : " + codigo.toString() + " , " : "") + "\n" + (cargaHoraria != null ? " \"cargaHoraria\" : " + cargaHoraria.toString() + " ," : "") + "\n";
 
         return j.trim();

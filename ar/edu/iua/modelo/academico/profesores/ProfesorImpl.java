@@ -76,12 +76,32 @@ public class ProfesorImpl extends Profesor{
     }
 
     public String fullToString() {
-        // TODO Auto-generated method stub
-        return null;
+        String z = (dni != null ? dni.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n";
+
+        for(Materia materia : materias){
+            String m = materia.fullToString().trim();
+            z += ( m.length() > 0 ) ? m + "\n" : "";
+        }
+                
+        return z.trim();
     }
 
-    public String fullToJson() {
-        // TODO Auto-generated method stub
-        return null;
+    public String fullToJson(){
+
+        String j = (dni != null ? "{\n \"dni\" : " + dni.toString() + ", " : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" , " : "") + "\n";
+
+        for(int i = 0; i < materias.size(); i++){
+            String m = materias.get(i).fullToJson();
+            if(i == materias.size() - 1){
+                j += ( m.length() > 0 ) ? m + "\n" : "";
+            } else {
+                j += (m.length() > 0) ? m + "," : "";
+            }
+            
+        }
+        
+        j += " ]\n }";
+
+        return j.trim();
     }
 }

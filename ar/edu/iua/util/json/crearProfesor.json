@@ -1,0 +1,36 @@
+{
+    "dni": 31227215,
+    "nombre": "Jerardo",
+    "materias": [
+      {
+        "codigo": 201821,
+        "nombre": "Educacion para la Salud",
+        "cargaHoraria": 2.0
+      },
+      {
+        "codigo": 201822,
+        "nombre": "Lengua y Literatura Castellanas II ",
+        "cargaHoraria": 5.0
+      },
+      {
+        "codigo": 201823,
+        "nombre": "Lengua y Cultura Latinas II ",
+        "cargaHoraria": 4.0
+      },
+      {
+        "codigo": 201824,
+        "nombre": "Lengua y Cultura Inglesas II  ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201825,
+        "nombre": "Formacion Musical II ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201826,
+        "nombre": "Formacion Plastica II ",
+        "cargaHoraria": 3.0
+      }
+    ]
+  }

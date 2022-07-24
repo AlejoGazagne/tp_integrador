@@ -6,13 +6,14 @@ import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class BorrarPlanImpl implements BorrarPlan{
+
     public boolean borrar(Plan plan) throws BorrarPlanEx{
         boolean ok = false;
-        if(plan != null){
+        if(!plan.equals(null)){
             try {
                 List<Plan> planes = BaseDeDatos.getPlanes();
                 for(int i = 0; i < planes.size(); i++){
-                    if(planes.get(i).getAnio().equals(plan.getAnio()) && planes.get(i).isEstadoBorrador() != false){
+                    if(planes.get(i).getAnio().equals(plan.getAnio()) && planes.get(i).isEstadoBorrador()){
                         BaseDeDatos.deletePlan(i);
                         ok = true;
                         return ok;

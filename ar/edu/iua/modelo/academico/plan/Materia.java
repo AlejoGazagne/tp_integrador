@@ -4,9 +4,7 @@ import ar.edu.iua.modelo.Objeto;
 
 public abstract class Materia extends Objeto {
 
-    abstract public AnioPlan getAnio();
-
-    abstract void setAnio(AnioPlan anio);
+    public Materia() {}
 
     abstract public Integer getCodigo();
 

@@ -3,14 +3,13 @@ package ar.edu.iua.negocio.academico.plan;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.Transformar;
 
 public class BuscarPlanesImpl implements BuscarPlanes {
     
-    public List<Plan> buscar(String terminos) throws ObjetoEx {
+    public List<Plan> buscar(String terminos) throws BuscarPlanEx {
         boolean ok = false;
         List<Plan> r = new ArrayList<Plan>();
 
@@ -31,7 +30,7 @@ public class BuscarPlanesImpl implements BuscarPlanes {
                 }
                 return r;
             }
-        } catch (ObjetoEx e) {
+        } catch (BuscarPlanEx e) {
             throw new BuscarPlanEx(e.getMessage());
         }catch (CloneNotSupportedException e) {
             throw new BuscarPlanEx(e.getMessage());

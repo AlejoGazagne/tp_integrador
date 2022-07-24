@@ -6,6 +6,7 @@ import java.util.List;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.profesores.Profesor;
 
+
 public class BaseDeDatos {
 
     private static List<Plan> planes = new ArrayList<Plan>();
@@ -30,9 +31,9 @@ public class BaseDeDatos {
     public static void deletePlan(int i) throws CloneNotSupportedException {
         BaseDeDatos.planes.remove(i);
     }
-    
-    //--
-    
+   
+    //--------------------------------------------------------------------------------------------------------------------
+   
     public static List<Profesor> getProfesores() throws CloneNotSupportedException {
         return new ArrayList<Profesor>(profesores);
     }
@@ -48,4 +49,5 @@ public class BaseDeDatos {
     public static void modifyProfesor(int i, Profesor aux) throws CloneNotSupportedException {
         BaseDeDatos.profesores.set(i, aux);
     }
+
 }

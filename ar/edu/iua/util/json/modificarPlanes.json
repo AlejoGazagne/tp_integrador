@@ -1,0 +1,512 @@
+[{
+	"anio": 2001,
+	"estado": "BORRADOR",
+	"anios": [{
+			"numero": 1,
+			"nombre": "Primer año",
+			"materias": [{
+					"codigo": 200111,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200112,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200113,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200114,
+					"nombre": "Matematica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200115,
+					"nombre": "Educacion para la Salud",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200116,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200117,
+					"nombre": "Educacion Fisica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200118,
+					"nombre": "Programacion",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200119,
+					"nombre": "Historia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 2001110,
+					"nombre": "Biologia",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 2,
+			"nombre": "Segundo año",
+			"materias": [{
+					"codigo": 200121,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200122,
+					"nombre": "Matematica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200123,
+					"nombre": "Informatica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200124,
+					"nombre": "Lengua",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200125,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200126,
+					"nombre": "Historia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200127,
+					"nombre": "Quimica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200128,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 3,
+			"nombre": "Tercero año",
+			"materias": [{
+					"codigo": 200131,
+					"nombre": "Latin",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200132,
+					"nombre": "Matematica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200133,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200134,
+					"nombre": "Robotica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200135,
+					"nombre": "Lengua",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200136,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200137,
+					"nombre": "Biologia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200138,
+					"nombre": "Informatica",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 4,
+			"nombre": "Cuarto año",
+			"materias": [{
+					"codigo": 200141,
+					"nombre": "Musica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200142,
+					"nombre": "Latin",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200143,
+					"nombre": "Educacion Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200144,
+					"nombre": "Quimica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200145,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200146,
+					"nombre": "Informatica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200147,
+					"nombre": "Historia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200148,
+					"nombre": "Biologia",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 5,
+			"nombre": "Quinto año",
+			"materias": [{
+					"codigo": 200151,
+					"nombre": "Educacion para la Salud",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200152,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200153,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200154,
+					"nombre": "Historia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200155,
+					"nombre": "Quimica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200156,
+					"nombre": "Matematica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 200157,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200158,
+					"nombre": "Robotica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 200159,
+					"nombre": "Plastica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 2001510,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 2001511,
+					"nombre": "Lengua",
+					"cargaHoraria": 3.0
+				}
+			]
+		}
+	]
+},
+{
+	"anio": 2018,
+	"estado": "BORRADOR",
+	"anios": [{
+			"numero": 1,
+			"nombre": "Primer año",
+			"materias": [{
+					"codigo": 201811,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201812,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201813,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201814,
+					"nombre": "Matematica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201815,
+					"nombre": "Educacion para la Salud",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201816,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201817,
+					"nombre": "Educacion Fisica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201818,
+					"nombre": "Programacion",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201819,
+					"nombre": "Historia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 2018110,
+					"nombre": "Biologia",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 2,
+			"nombre": "Segundo año",
+			"materias": [{
+					"codigo": 201821,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201822,
+					"nombre": "Matematica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201823,
+					"nombre": "Informatica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201824,
+					"nombre": "Lengua",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201825,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201826,
+					"nombre": "Historia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201827,
+					"nombre": "Quimica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201828,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 3,
+			"nombre": "Tercero año",
+			"materias": [{
+					"codigo": 201831,
+					"nombre": "Latin",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201832,
+					"nombre": "Matematica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201833,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201834,
+					"nombre": "Robotica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201835,
+					"nombre": "Lengua",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201836,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201837,
+					"nombre": "Biologia",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201838,
+					"nombre": "Informatica",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 4,
+			"nombre": "Cuarto año",
+			"materias": [{
+					"codigo": 201841,
+					"nombre": "Musica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201842,
+					"nombre": "Latin",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201843,
+					"nombre": "Educacion Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201844,
+					"nombre": "Quimica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201845,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201846,
+					"nombre": "Informatica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201847,
+					"nombre": "Historia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201848,
+					"nombre": "Biologia",
+					"cargaHoraria": 2.0
+				}
+			]
+		},
+		{
+			"numero": 5,
+			"nombre": "Quinto año",
+			"materias": [{
+					"codigo": 201851,
+					"nombre": "Educacion para la Salud",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201852,
+					"nombre": "Geografia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201853,
+					"nombre": "Musica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201854,
+					"nombre": "Historia",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201855,
+					"nombre": "Quimica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201856,
+					"nombre": "Matematica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 201857,
+					"nombre": "Ingles",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201858,
+					"nombre": "Robotica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 201859,
+					"nombre": "Plastica",
+					"cargaHoraria": 2.0
+				},
+				{
+					"codigo": 2018510,
+					"nombre": "Fisica",
+					"cargaHoraria": 3.0
+				},
+				{
+					"codigo": 2018511,
+					"nombre": "Lengua",
+					"cargaHoraria": 3.0
+				}
+			]
+		}
+	]
+}
+]
+
