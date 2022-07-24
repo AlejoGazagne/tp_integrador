@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.CrearPlanEx;
 
@@ -43,8 +42,8 @@ public class CrearPlanesHandler implements HttpHandler {
 
 
     private void executeResponse(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        Plan[] creadoArray = new Gson().fromJson(body, PlanImpl[].class); 
-        List<Plan> creadoList = Arrays.asList(creadoArray);
+        PlanImpl[] creadoArray = new Gson().fromJson(body, PlanImpl[].class); 
+        List<PlanImpl> creadoList = Arrays.asList(creadoArray);
         CrearPlanesImpl crearPlan = new CrearPlanesImpl();
     
         String msg = "";

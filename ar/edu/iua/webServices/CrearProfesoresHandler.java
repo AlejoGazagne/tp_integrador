@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 import ar.edu.iua.negocio.academico.profesor.CrearProfesorEx;
 import ar.edu.iua.negocio.academico.profesor.CrearProfesoresImpl;
 
@@ -40,13 +40,13 @@ public class CrearProfesoresHandler implements HttpHandler{
     }
 
     private void executeResponse(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        Profesor[] creadoArray = new Gson().fromJson(body, Profesor[].class); 
-        List<Profesor> creadoList = Arrays.asList(creadoArray);
-        CrearProfesoresImpl crearPlan = new CrearProfesoresImpl();
+        ProfesorImpl[] creadoArray = new Gson().fromJson(body, ProfesorImpl[].class); 
+        List<ProfesorImpl> creadoList = Arrays.asList(creadoArray);
+        CrearProfesoresImpl crearProfesores = new CrearProfesoresImpl();
     
         String msg = "";
         try {
-            crearPlan.crear(creadoList);
+            crearProfesores.crear(creadoList);
             msg = "200: Se crearon los profesores.";
             exchange.sendResponseHeaders(200,msg.length());
             OutputStream os = exchange.getResponseBody();

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.Transformar;
 
@@ -14,7 +15,7 @@ public class BuscarProfesoresImpl {
 
         try {
             ok = validar(terminos);
-            List<Profesor> profesores = BaseDeDatos.getProfesores();
+            List<ProfesorImpl> profesores = BaseDeDatos.getProfesores();
             if(ok == true){
                 String arrayTerminos[] = terminos.split(" ");
                 FOR_PROFESOR:

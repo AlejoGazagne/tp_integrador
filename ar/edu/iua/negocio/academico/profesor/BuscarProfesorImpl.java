@@ -4,6 +4,7 @@ import java.util.List;
 
 import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class BuscarProfesorImpl {
@@ -12,7 +13,7 @@ public class BuscarProfesorImpl {
         try {
             ok = validacion(dni);
             if(ok == true){
-                List<Profesor> profesores = BaseDeDatos.getProfesores();
+                List<ProfesorImpl> profesores = BaseDeDatos.getProfesores();
                 for(int i = 0; i < profesores.size(); i++){
                     if(profesores.get(i).getDni().equals(dni)) return profesores.get(i);
                 }

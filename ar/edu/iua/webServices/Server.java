@@ -26,7 +26,7 @@ public class Server {
 
             
             server.createContext("/crearProfesor", new CrearProfesorHandler()); // http://localhost:8080/crearProfesor
-            server.createContext("/crearProfesores", new CrearProfesorHandler()); // http://localhost:8080/crearProfesor
+            server.createContext("/crearProfesores", new CrearProfesoresHandler()); // http://localhost:8080/crearProfesor
 
             server.createContext("/buscarProfesor", new BuscarProfesorHandler()); // http://localhost:8080/buscarProfesor
             server.createContext("/buscarProfesores", new BuscarProfesoresHandler()); // http://localhost:8080/buscarProfesores

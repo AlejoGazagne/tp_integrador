@@ -2,17 +2,17 @@ package ar.edu.iua.negocio.academico.profesor;
 
 import java.util.List;
 
-import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 
 public class CrearProfesoresImpl {
-    public boolean crear(List<Profesor> profesores) throws CrearProfesorEx{
+    public boolean crear(List<ProfesorImpl> creadoList) throws CrearProfesorEx{
 
         CrearProfesorImpl crearProfesor = new CrearProfesorImpl();
 
-        if(profesores == null) return false;
+        if(creadoList == null) return false;
         
-        for(int i = 0; i < profesores.size(); i++){
-            crearProfesor.crear(profesores.get(i));
+        for(int i = 0; i < creadoList.size(); i++){
+            crearProfesor.crear(creadoList.get(i));
         }
 
         return true;

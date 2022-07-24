@@ -10,7 +10,6 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 
@@ -41,7 +40,7 @@ public class BuscarPlanHandler implements HttpHandler {
         BuscarPlanImpl encontrado = new BuscarPlanImpl();
         //Gson gson = new Gson();
         int anio = Integer.parseInt(params.get("anio"));
-        Plan plan = new PlanImpl(); 
+        PlanImpl plan = new PlanImpl(); 
         
         try {
             plan = (PlanImpl) encontrado.buscar(anio);

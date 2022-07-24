@@ -1,5 +1,6 @@
 package ar.edu.iua.negocio.academico.plan;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.ValidarPlanCrearModificar;
 import ar.edu.iua.util.ValidarPlanEx;
@@ -12,7 +13,7 @@ public class CrearPlanImpl implements CrearPlan {
         try {
             ok = ValidarPlanCrearModificar.validacion(plan);
             if (ok == true){
-                BaseDeDatos.setPlan(plan);
+                BaseDeDatos.setPlan((PlanImpl) plan);
                 return true;
                  
             } else return false;

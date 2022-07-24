@@ -3,6 +3,7 @@ package ar.edu.iua.negocio.academico.plan;
 import java.util.List;
 
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class BorrarPlanImpl implements BorrarPlan{
@@ -11,7 +12,7 @@ public class BorrarPlanImpl implements BorrarPlan{
         boolean ok = false;
         if(!plan.equals(null)){
             try {
-                List<Plan> planes = BaseDeDatos.getPlanes();
+                List<PlanImpl> planes = BaseDeDatos.getPlanes();
                 for(int i = 0; i < planes.size(); i++){
                     if(planes.get(i).getAnio().equals(plan.getAnio()) && planes.get(i).isEstadoBorrador()){
                         BaseDeDatos.deletePlan(i);

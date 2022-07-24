@@ -4,8 +4,6 @@ import ar.edu.iua.modelo.Objeto;
 
 public abstract class Materia extends Objeto {
 
-    public Materia() {}
-
     abstract public Integer getCodigo();
 
     abstract public void setCodigo(Integer codigo);

@@ -2,7 +2,7 @@ package ar.edu.iua.webServices;
 
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlanEx;
 import ar.edu.iua.negocio.academico.plan.ModificarPlanesImpl;
 
@@ -45,8 +45,8 @@ public class ModificarPlanesHandler implements HttpHandler{
     }
 
     private void executeResponse(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        Plan[] modificarArray = new Gson().fromJson(body, Plan[].class); 
-        List<Plan> modificadoList = Arrays.asList(modificarArray);
+        PlanImpl[] modificarArray = new Gson().fromJson(body, PlanImpl[].class); 
+        List<PlanImpl> modificadoList = Arrays.asList(modificarArray);
         ModificarPlanesImpl modificarPlanes = new ModificarPlanesImpl();
     
         String msg = "";

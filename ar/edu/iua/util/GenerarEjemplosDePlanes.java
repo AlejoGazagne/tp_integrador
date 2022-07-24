@@ -9,9 +9,9 @@ public class GenerarEjemplosDePlanes {
 
     // Este metodo primero crea 2 planes, segun https://monserrat.unc.edu.ar/secundario/plan-de-estudios/#1523542585948-acc3dfd8-8da3
     // y tambien crea de forma aleatoria una determinada cantidad de planes
-    public static List<Plan> generar(int cantidadAGenerar, boolean imprimirResultado) {
+    public static List<PlanImpl> generar(int cantidadAGenerar, boolean imprimirResultado) {
 
-        List<Plan> planes = new ArrayList<Plan>();
+        List<PlanImpl> planes = new ArrayList<PlanImpl>();
 
         // ==========================================================================
 
@@ -22,11 +22,11 @@ public class GenerarEjemplosDePlanes {
         plan2018.setAnio(2018);
         plan2018.setEstadoActivo();
 
-        planes.add(plan2018);
+        planes.add((PlanImpl) plan2018);
 
         // AÑOS DEL PLAN 2018
 
-        AnioPlan primero2018 = new AnioPlanImpl(1, "Primer año");
+        AnioPlanImpl primero2018 = new AnioPlanImpl(1, "Primer año");
         AnioPlan segundo2018 = new AnioPlanImpl(2, "Segundo año");
         AnioPlan tercero2018 = new AnioPlanImpl(3, "Tercero año");
         AnioPlan cuarto2018 = new AnioPlanImpl(4, "Cuarto año");
@@ -150,7 +150,7 @@ public class GenerarEjemplosDePlanes {
         plan2001.setAnio(2001);
         plan2001.setEstadoNoActivo();
 
-        planes.add(plan2001);
+        planes.add((PlanImpl) plan2001);
 
         // AÑOS DEL PLAN 2001
 
@@ -311,10 +311,10 @@ public class GenerarEjemplosDePlanes {
         return planes;
     }
 
-    private static void generarYAgregarPlanesAleatoriamente(int cantidadAGenerar, List<Plan> planes){
+    private static void generarYAgregarPlanesAleatoriamente(int cantidadAGenerar, List<PlanImpl> planes){
         UtilRandom generacionDePlanes = new UtilRandom();
         for (int i = 0; i < cantidadAGenerar; i++){
-            planes.add(generacionDePlanes.crearPlanAleatorio(planes));
+            planes.add((PlanImpl) generacionDePlanes.crearPlanAleatorio(planes));
         }
     }
 

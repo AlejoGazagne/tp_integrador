@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.modelo.academico.plan.Materia;
+import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 
 public class ProfesorImpl extends Profesor{
     
     private Integer dni;
     private String nombre;
-    private List<Materia> materias = new ArrayList<Materia>();
+    private List<MateriaImpl> materias = new ArrayList<>();
     
-    public ProfesorImpl(Integer dni, String nombre, List<Materia> materias) {
+    public ProfesorImpl(Integer dni, String nombre, List<MateriaImpl> materias) {
         this.dni = dni;
         this.nombre = nombre;
         this.materias = materias;
@@ -38,11 +39,11 @@ public class ProfesorImpl extends Profesor{
         
     }
 
-    public List<Materia> getMaterias() {
+    public List<MateriaImpl> getMaterias() {
         return materias;
     } 
 
-    public void setMaterias(List<Materia> materias) {
+    public void setMaterias(List<MateriaImpl> materias) {
         this.materias = materias;
     }
 

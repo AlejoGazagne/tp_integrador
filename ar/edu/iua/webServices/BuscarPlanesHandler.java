@@ -10,7 +10,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanesImpl;
 
@@ -41,7 +41,7 @@ public class BuscarPlanesHandler implements HttpHandler {
 
     private void executeResponse(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         BuscarPlanesImpl buscadorPlanes = new BuscarPlanesImpl();
-        List<Plan> planesEncontrados = new ArrayList<>();
+        List<PlanImpl> planesEncontrados = new ArrayList<>();
         Gson gson = new Gson();
         String termino = params.get("terms");
         

@@ -12,8 +12,9 @@ import ar.edu.iua.modelo.ObjetoEx;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 //import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 //import ar.edu.iua.negocio.academico.plan.BorrarPlan;
 //import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
 //import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
@@ -35,7 +36,7 @@ public class Pruebas {
 
     public void probar() throws ObjetoEx{
         
-        List<Plan> planes = GenerarEjemplosDePlanes.generar(8, true);
+        List<PlanImpl> planes = GenerarEjemplosDePlanes.generar(8, true);
 
         System.out.println("Se crearon " + planes.size() + " planes.");
 
@@ -50,7 +51,7 @@ public class Pruebas {
             System.out.println("Se creo con exito");
         }
 
-        List<Profesor> profesores = new ArrayList<Profesor>();
+        List<ProfesorImpl> profesores = new ArrayList<ProfesorImpl>();
         profesores = GenerarEjemplosDeProfesores.generarYAgregarProfesoresAleatoriamente();
 
         CrearProfesoresImpl crearProfesores = new CrearProfesoresImpl();

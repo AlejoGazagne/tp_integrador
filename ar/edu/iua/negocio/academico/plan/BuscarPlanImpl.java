@@ -15,7 +15,7 @@ public class BuscarPlanImpl implements BuscarPlan{
             ok = validacion(anio);
             if(ok==true){
 
-                List<Plan> planes = BaseDeDatos.getPlanes();
+                List<PlanImpl> planes = BaseDeDatos.getPlanes();
 
                 for(int i = 0; i < planes.size(); i++){
                     if(planes.get(i).getAnio().equals(anio)) return planes.get(i);

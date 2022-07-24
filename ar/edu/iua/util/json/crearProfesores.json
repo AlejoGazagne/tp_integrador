@@ -1,0 +1,74 @@
+[
+    {
+    "dni": 34527215,
+    "nombre": "Pelado",
+    "materias": [
+      {
+        "codigo": 201821,
+        "nombre": "Educacion para la Salud",
+        "cargaHoraria": 2.0
+      },
+      {
+        "codigo": 201822,
+        "nombre": "Lengua y Literatura Castellanas II ",
+        "cargaHoraria": 5.0
+      },
+      {
+        "codigo": 201823,
+        "nombre": "Lengua y Cultura Latinas II ",
+        "cargaHoraria": 4.0
+      },
+      {
+        "codigo": 201824,
+        "nombre": "Lengua y Cultura Inglesas II  ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201825,
+        "nombre": "Formacion Musical II ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201826,
+        "nombre": "Formacion Plastica II ",
+        "cargaHoraria": 3.0
+      }
+    ]
+  },
+  {
+    "dni": 34528481,
+    "nombre": "Peladito",
+    "materias": [
+      {
+        "codigo": 201821,
+        "nombre": "Educacion para la Salud",
+        "cargaHoraria": 2.0
+      },
+      {
+        "codigo": 201822,
+        "nombre": "Lengua y Literatura Castellanas II ",
+        "cargaHoraria": 5.0
+      },
+      {
+        "codigo": 201823,
+        "nombre": "Lengua y Cultura Latinas II ",
+        "cargaHoraria": 4.0
+      },
+      {
+        "codigo": 201824,
+        "nombre": "Lengua y Cultura Inglesas II  ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201825,
+        "nombre": "Formacion Musical II ",
+        "cargaHoraria": 3.0
+      },
+      {
+        "codigo": 201826,
+        "nombre": "Formacion Plastica II ",
+        "cargaHoraria": 3.0
+      }
+    ]
+  }
+]

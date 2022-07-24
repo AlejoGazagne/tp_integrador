@@ -3,7 +3,8 @@ package ar.edu.iua.util;
 import java.util.List;
 
 import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class FormatoImprimir {
@@ -38,13 +39,13 @@ public class FormatoImprimir {
         return cantMaterias;
     }
 
-    public static void imprimirFormatoLista(List<Plan> planes){
+    public static void imprimirFormatoLista(List<PlanImpl> planesEncontrados){
         int cantMaterias = 0; 
         System.out.println("PLANES" + "\t" + "ANIOS" + "\t" + "MATERIAS" + "   " + "ESTADO");
         System.out.println("------" + "\t" + "-----" + "\t" + "--------" + "   " + "---------");      
         
         
-            for(Plan plan : planes){
+            for(Plan plan : planesEncontrados){
                 cantMaterias = contarMaterias(plan);
                 System.out.print(" " + plan.getAnio() + "\t  " + plan.getAnios().size() + "\t   " + cantMaterias + "\t   ");
                 if(plan.isEstadoActivo()){
@@ -59,7 +60,7 @@ public class FormatoImprimir {
     }
 
     public static void imprimirProfesores() {
-        List<Profesor> base;
+        List<ProfesorImpl> base;
         try {
             base = BaseDeDatos.getProfesores();
             for(int i = 0; i < base.size(); i++){

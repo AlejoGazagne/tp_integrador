@@ -3,7 +3,7 @@ package ar.edu.iua.modelo.academico.profesores;
 import java.util.List;
 
 import ar.edu.iua.modelo.Objeto;
-import ar.edu.iua.modelo.academico.plan.Materia;
+import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 
 public abstract class Profesor extends Objeto {
 
@@ -15,8 +15,8 @@ public abstract class Profesor extends Objeto {
 
     abstract public void setNombre(String nombre);
 
-    abstract public List<Materia> getMaterias();
+    abstract public List<MateriaImpl> getMaterias();
 
-    abstract public void setMaterias(List<Materia> materias);
+    abstract public void setMaterias(List<MateriaImpl> materias);
 
 }

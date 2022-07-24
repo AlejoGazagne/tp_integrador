@@ -2,24 +2,23 @@ package ar.edu.iua.negocio.academico.plan;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.Transformar;
 
 public class BuscarPlanesImpl implements BuscarPlanes {
     
-    public List<Plan> buscar(String terminos) throws BuscarPlanEx {
+    public List<PlanImpl> buscar(String terminos) throws BuscarPlanEx {
         boolean ok = false;
-        List<Plan> r = new ArrayList<Plan>();
+        List<PlanImpl> r = new ArrayList<PlanImpl>();
 
         try {
             ok = validar(terminos);
-            List<Plan> planes = BaseDeDatos.getPlanes();
+            List<PlanImpl> planes = BaseDeDatos.getPlanes();
             if(ok == true){
                 String arrayTerminos[] = terminos.split(" ");
                 FOR_PLAN:
-                for (Plan plan : planes) {
+                for (PlanImpl plan : planes) {
                     String toFullString = Transformar.traducirCadena(plan.fullToString().toLowerCase());
                     for (String termino : arrayTerminos) { 
                         if (toFullString.contains(Transformar.traducirCadena(termino.toLowerCase()))) {

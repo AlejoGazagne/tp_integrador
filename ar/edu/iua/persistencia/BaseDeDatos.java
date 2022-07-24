@@ -3,28 +3,28 @@ package ar.edu.iua.persistencia;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.modelo.academico.profesores.Profesor;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
 
 
 public class BaseDeDatos {
 
-    private static List<Plan> planes = new ArrayList<Plan>();
-    private static List<Profesor> profesores = new ArrayList<Profesor>();
+    private static List<PlanImpl> planes = new ArrayList<PlanImpl>();
+    private static List<ProfesorImpl> profesores = new ArrayList<ProfesorImpl>();
 
     public BaseDeDatos() {
 
     }
 
-    public static List<Plan> getPlanes() throws CloneNotSupportedException {
-        return new ArrayList<Plan>(planes);
+    public static List<PlanImpl> getPlanes() throws CloneNotSupportedException {
+        return new ArrayList<PlanImpl>(planes);
     }
 
-    public static void setPlan(Plan aux) throws CloneNotSupportedException {
-        BaseDeDatos.planes.add((Plan)aux.clone());
+    public static void setPlan(PlanImpl aux) throws CloneNotSupportedException {
+        BaseDeDatos.planes.add((PlanImpl)aux.clone());
     }
 
-    public static void modifyPlan(int i, Plan aux) throws CloneNotSupportedException {
+    public static void modifyPlan(int i, PlanImpl aux) throws CloneNotSupportedException {
         BaseDeDatos.planes.set(i, aux);
     }
 
@@ -34,19 +34,19 @@ public class BaseDeDatos {
    
     //--------------------------------------------------------------------------------------------------------------------
    
-    public static List<Profesor> getProfesores() throws CloneNotSupportedException {
-        return new ArrayList<Profesor>(profesores);
+    public static List<ProfesorImpl> getProfesores() throws CloneNotSupportedException {
+        return new ArrayList<ProfesorImpl>(profesores);
     }
 
-    public static void setProfesor(Profesor aux) throws CloneNotSupportedException {
-        BaseDeDatos.profesores.add((Profesor) aux.clone());
+    public static void setProfesor(ProfesorImpl aux) throws CloneNotSupportedException {
+        BaseDeDatos.profesores.add((ProfesorImpl) aux.clone());
     }
 
     public static void deleteProfesor(int i) throws CloneNotSupportedException {
         BaseDeDatos.profesores.remove(i);
     }
 
-    public static void modifyProfesor(int i, Profesor aux) throws CloneNotSupportedException {
+    public static void modifyProfesor(int i, ProfesorImpl aux) throws CloneNotSupportedException {
         BaseDeDatos.profesores.set(i, aux);
     }
 
