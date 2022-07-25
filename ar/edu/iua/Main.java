@@ -15,7 +15,6 @@ public class Main {
         } catch (ObjetoEx e) {
             System.err.println(e);
         }
-        
       
         System.out.println("\n\nFin de main"); 
     }
