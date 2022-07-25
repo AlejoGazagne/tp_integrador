@@ -1,21 +1,24 @@
 package ar.edu.iua.webServices;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.util.Map;
 
-import com.google.gson.Gson;
 //import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.modelo.academico.profesores.Profesor;
-import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
-import ar.edu.iua.negocio.academico.profesor.BuscarProfesorEx;
-import ar.edu.iua.negocio.academico.profesor.BuscarProfesorImpl;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanEx;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
+
+import com.google.gson.Gson;
 
 
-public class BuscarProfesorHandler implements HttpHandler {
+
+public class BuscarPlanHandler implements HttpHandler {
+
     public void handle(HttpExchange exchange) throws IOException {
 
         //String protocol = exchange.getProtocol();
@@ -34,28 +37,28 @@ public class BuscarProfesorHandler implements HttpHandler {
     }
 
     private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
-        BuscarProfesorImpl encontrado = new BuscarProfesorImpl();
-        int dni = Integer.parseInt(params.get("dni"));
-        Profesor prof = new ProfesorImpl(); 
-    
+        BuscarPlanImpl encontrado = new BuscarPlanImpl();
+        int anio = Integer.parseInt(params.get("anio"));
+        PlanImpl plan = new PlanImpl(); 
+        
         try {
-            prof = (ProfesorImpl) encontrado.buscar(dni);
-            String msg = new Gson().toJson(prof);
+            plan = (PlanImpl) encontrado.buscar(anio);
+            Gson gson = new Gson();
+            String msg = gson.toJson(plan);
             byte[] json = msg.getBytes("UTF-8");
             exchange.sendResponseHeaders(200, json.length);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
-
-        } catch (BuscarProfesorEx e) {
+        } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = e.getMessage();
             exchange.sendResponseHeaders(400, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
-            os.close();
+         
         }
-            
+
     }
 
 }

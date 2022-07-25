@@ -48,7 +48,8 @@ public class BuscarPlanesHandler implements HttpHandler {
         try {
             planesEncontrados = buscadorPlanes.buscar(termino.toString());
             String msg = gson.toJson(planesEncontrados);
-            exchange.sendResponseHeaders(200, msg.length());
+            byte[] json = msg.getBytes("UTF-8");
+            exchange.sendResponseHeaders(200, json.length);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();

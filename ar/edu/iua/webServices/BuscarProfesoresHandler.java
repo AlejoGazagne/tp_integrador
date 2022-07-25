@@ -46,7 +46,8 @@ public class BuscarProfesoresHandler implements HttpHandler {
         try {
             profesEncontrados = buscadorProfes.buscar(terminos.toString());
             String msg = gson.toJson(profesEncontrados);
-            exchange.sendResponseHeaders(200, msg.length());
+            byte[] json = msg.getBytes("UTF-8");
+            exchange.sendResponseHeaders(200, json.length);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();

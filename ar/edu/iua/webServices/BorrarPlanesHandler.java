@@ -1,21 +1,20 @@
 package ar.edu.iua.webServices;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-import com.google.gson.Gson;
-//import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.negocio.academico.plan.BorrarPlanEx;
+import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
 
-import ar.edu.iua.modelo.academico.profesores.Profesor;
-import ar.edu.iua.modelo.academico.profesores.ProfesorImpl;
-import ar.edu.iua.negocio.academico.profesor.BuscarProfesorEx;
-import ar.edu.iua.negocio.academico.profesor.BuscarProfesorImpl;
+public class BorrarPlanesHandler implements HttpHandler {
 
-
-public class BuscarProfesorHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
 
         //String protocol = exchange.getProtocol();
@@ -34,20 +33,23 @@ public class BuscarProfesorHandler implements HttpHandler {
     }
 
     private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
-        BuscarProfesorImpl encontrado = new BuscarProfesorImpl();
-        int dni = Integer.parseInt(params.get("dni"));
-        Profesor prof = new ProfesorImpl(); 
-    
+        List<PlanImpl> borrados = new ArrayList<>();
+        
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            PlanImpl plan = new PlanImpl();
+            plan.setAnio(Integer.parseInt(entry.getValue()));
+            borrados.add(plan);
+        }
+
+        BorrarPlanesImpl borrador = new BorrarPlanesImpl();
         try {
-            prof = (ProfesorImpl) encontrado.buscar(dni);
-            String msg = new Gson().toJson(prof);
-            byte[] json = msg.getBytes("UTF-8");
-            exchange.sendResponseHeaders(200, json.length);
+            borrador.borrar(borrados);
+            String msg = "200: Se borraron los planes";
+            exchange.sendResponseHeaders(200, msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
-
-        } catch (BuscarProfesorEx e) {
+        } catch (BorrarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = e.getMessage();
             exchange.sendResponseHeaders(400, msg.length());
@@ -55,7 +57,9 @@ public class BuscarProfesorHandler implements HttpHandler {
             os.write(msg.getBytes());
             os.close();
         }
-            
+
+        
+        
     }
 
 }
