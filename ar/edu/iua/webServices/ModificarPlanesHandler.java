@@ -52,7 +52,7 @@ public class ModificarPlanesHandler implements HttpHandler{
         String msg = "";
         try {
             modificarPlanes.modificar(modificadoList);
-            msg = "200: Se creo el plan.";
+            msg = "200: Se modificaron los planes.";
             exchange.sendResponseHeaders(200,msg.length());
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());

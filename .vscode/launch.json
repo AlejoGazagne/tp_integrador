@@ -9,6 +9,13 @@
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "ar.edu.iua.Main",
+            "projectName": "tp_integrador_3453e95"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "ar.edu.iua.Main",
             "projectName": "tp_integrador-master_db58827a"
         },
         {

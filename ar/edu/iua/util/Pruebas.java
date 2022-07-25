@@ -59,7 +59,7 @@ public class Pruebas {
             System.out.println("Se creo con exito la lista de profes");
         }
     
-        //FormatoImprimir.imprimirProfesores();
+        FormatoImprimir.imprimirProfesores();
 
         FormatoImprimir.imprimirFormatoLista(planes);
 

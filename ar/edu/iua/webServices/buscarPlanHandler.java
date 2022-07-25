@@ -38,7 +38,6 @@ public class BuscarPlanHandler implements HttpHandler {
 
     private void executeResponse(HttpExchange exchange, Map<String, String> params, String body) throws IOException {
         BuscarPlanImpl encontrado = new BuscarPlanImpl();
-        //Gson gson = new Gson();
         int anio = Integer.parseInt(params.get("anio"));
         PlanImpl plan = new PlanImpl(); 
         

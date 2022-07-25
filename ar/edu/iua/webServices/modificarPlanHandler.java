@@ -45,7 +45,6 @@ public class ModificarPlanHandler implements HttpHandler{
 
         PlanImpl plan = new PlanImpl();
         Gson gson = new Gson();
-        System.out.println("Pasa por aca");
         plan = gson.fromJson(body, PlanImpl.class);
 
         ModificarPlanImpl modificarPlan = new ModificarPlanImpl();

@@ -14,7 +14,7 @@ public class BorrarPlanImpl implements BorrarPlan{
             try {
                 List<PlanImpl> planes = BaseDeDatos.getPlanes();
                 for(int i = 0; i < planes.size(); i++){
-                    if(planes.get(i).getAnio().equals(plan.getAnio()) && planes.get(i).isEstadoBorrador()){
+                    if(planes.get(i).getAnio().equals(plan.getAnio()) && planes.get(i).isEstadoBorrador() != false){
                         BaseDeDatos.deletePlan(i);
                         ok = true;
                         return ok;

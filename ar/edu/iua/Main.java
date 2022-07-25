@@ -8,15 +8,15 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Comienzo de main\n\n");
 
-        Pruebas pruebas = new Pruebas(); 
+        Pruebas pruebas = new Pruebas();
      
         try {
-            pruebas.probar();    
+            pruebas.probar();
         } catch (ObjetoEx e) {
-            System.err.println(e); 
+            System.err.println(e);
         }
         
       
         System.out.println("\n\nFin de main"); 
-        }
     }
+}
